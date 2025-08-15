@@ -1,0 +1,279 @@
+# Reality Protocol - GitHub Pages Configuration
+
+# Site settings
+title: "Reality Protocol - Build Applications That Manipulate Reality"
+description: "The first web3 platform for infinite-dimensional computing with consciousness-aware features and quantum-secured consensus. Think Ethereum, but for reality itself."
+url: "https://reality-protocol.github.io"
+baseurl: ""
+
+# Repository information
+repository: reality-protocol/documentation
+github_username: reality-protocol
+
+# Site metadata
+author:
+  name: "Reality Protocol Foundation"
+  email: "info@reality-protocol.org"
+  twitter: "RealityProtocol"
+  github: "reality-protocol"
+
+# SEO and social
+twitter:
+  username: RealityProtocol
+  card: summary_large_image
+
+social:
+  name: Reality Protocol Foundation
+  links:
+    - https://twitter.com/RealityProtocol
+    - https://github.com/reality-protocol
+    - https://discord.gg/reality-protocol
+
+# Logo and branding
+logo: /assets/images/reality-protocol-logo.png
+image: /assets/images/reality-protocol-preview.png
+
+# Language and locale
+lang: en-US
+timezone: UTC
+
+# Build settings
+markdown: kramdown
+highlighter: rouge
+theme: minima
+plugins:
+  - jekyll-feed
+  - jekyll-sitemap
+  - jekyll-seo-tag
+  - jekyll-redirect-from
+
+# Kramdown settings
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge
+  syntax_highlighter_opts:
+    css_class: 'highlight'
+    span:
+      line_numbers: false
+    block:
+      line_numbers: true
+
+# Rouge settings
+rouge:
+  css_class: 'highlight'
+
+# Collections for organized content
+collections:
+  whitepapers:
+    output: true
+    permalink: /:collection/:name/
+  guides:
+    output: true
+    permalink: /:collection/:name/
+  examples:
+    output: true
+    permalink: /:collection/:name/
+
+# Default layouts for collections
+defaults:
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
+      permalink: /blog/:year/:month/:day/:title/
+  - scope:
+      path: ""
+      type: "whitepapers"
+    values:
+      layout: "whitepaper"
+  - scope:
+      path: ""
+      type: "guides"
+    values:
+      layout: "guide"
+  - scope:
+      path: ""
+      type: "examples"
+    values:
+      layout: "example"
+
+# Navigation structure
+navigation:
+  main:
+    - title: "Home"
+      url: "/"
+    - title: "Documentation"
+      url: "/docs/"
+      subnav:
+        - title: "Getting Started"
+          url: "/reality_protocol/user_guides/getting_started/"
+        - title: "Developer Guide"
+          url: "/reality_protocol/developer/quick_start/"
+        - title: "API Reference"
+          url: "/reality_protocol/technical/api_reference/"
+    - title: "Whitepapers"
+      url: "/whitepapers/"
+      subnav:
+        - title: "Infinite Dimensionality"
+          url: "/whitepapers/infinite_dimensionality_emergence/"
+        - title: "Mathematical Foundations"
+          url: "/whitepapers/mathematical_foundations_infinite_dimensionality/"
+        - title: "Reality Exposition"
+          url: "/whitepapers/reality_exposition_infinite_dimensionality/"
+        - title: "Web3 Technology Stack"
+          url: "/whitepapers/web3_informational_singularity_stack/"
+    - title: "Community"
+      url: "/community/"
+      subnav:
+        - title: "Contributing"
+          url: "/reality_protocol/community/contributing/"
+        - title: "Getting Involved"
+          url: "/reality_protocol/community/getting_involved/"
+        - title: "Research Collaboration"
+          url: "/reality_protocol/community/research_collaboration/"
+
+# Exclude from processing
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor/bundle/
+  - vendor/cache/
+  - vendor/gems/
+  - vendor/ruby/
+  - .sass-cache/
+  - .jekyll-cache/
+  - gemfiles/
+  - README.md
+  - LICENSE
+  - "*.tmp"
+  - "*.bak"
+  - .git/
+  - .github/
+
+# Include specific files
+include:
+  - _pages
+  - assets
+  - .htaccess
+  - .nojekyll
+
+# Performance optimizations
+sass:
+  sass_dir: assets/css
+  style: compressed
+
+# Compression
+compress_html:
+  clippings: all
+  comments: all
+  endings: all
+  startings: []
+  blanklines: false
+  profile: false
+
+# Analytics and tracking
+google_analytics: UA-XXXXXXXX-X
+google_tag_manager: GTM-XXXXXXX
+
+# Search configuration
+search:
+  enabled: true
+  provider: algolia
+  algolia:
+    application_id: YOUR_APPLICATION_ID
+    index_name: reality_protocol_docs
+    search_only_api_key: YOUR_SEARCH_ONLY_API_KEY
+
+# Comments (if needed)
+comments:
+  provider: false
+
+# Social sharing
+social_share:
+  twitter: true
+  facebook: true
+  linkedin: true
+  reddit: true
+
+# Custom variables for the site
+custom:
+  version: "1.0.0"
+  last_updated: "2025-01-15"
+  documentation_pages: 200+
+  primary_color: "#6366f1"
+  secondary_color: "#8b5cf6"
+  accent_color: "#06b6d4"
+  
+# Audience-specific configurations
+audiences:
+  developers:
+    primary_docs: "/reality_protocol/developer/quick_start/"
+    color_scheme: "blue"
+    icon: "💻"
+  researchers:
+    primary_docs: "/whitepapers/mathematical_foundations_infinite_dimensionality/"
+    color_scheme: "purple"
+    icon: "🔬"
+  explorers:
+    primary_docs: "/whitepapers/reality_exposition_infinite_dimensionality/"
+    color_scheme: "cyan"
+    icon: "🧠"
+  investors:
+    primary_docs: "/whitepapers/web3_informational_singularity_stack/"
+    color_scheme: "green"
+    icon: "💰"
+
+# Feature flags
+features:
+  interactive_visualizations: true
+  search_functionality: true
+  audience_detection: true
+  progressive_disclosure: true
+  quantum_animations: true
+  consciousness_tracking: false  # Privacy-first approach
+
+# Content organization
+content_types:
+  whitepapers:
+    icon: "📄"
+    description: "Comprehensive theoretical foundations"
+    difficulty: "advanced"
+  user_guides:
+    icon: "📖"
+    description: "Step-by-step tutorials"
+    difficulty: "beginner"
+  developer_docs:
+    icon: "🛠️"
+    description: "Technical implementation guides"
+    difficulty: "intermediate"
+  api_reference:
+    icon: "⚙️"
+    description: "Complete API documentation"
+    difficulty: "intermediate"
+  examples:
+    icon: "💡"
+    description: "Working code samples"
+    difficulty: "beginner"
+  community:
+    icon: "🤝"
+    description: "Collaboration and contribution"
+    difficulty: "all"
+
+# Internationalization (future)
+languages:
+  en:
+    name: "English"
+    flag: "🇺🇸"
+    default: true
+  # Future languages:
+  # es:
+  #   name: "Español"
+  #   flag: "🇪🇸"
+  # zh:
+  #   name: "中文"
+  #   flag: "🇨🇳"
+  # ja:
+  #   name: "日本語"
+  #   flag: "🇯🇵"

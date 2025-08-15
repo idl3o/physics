@@ -1,0 +1,49 @@
+# Reality Protocol Documentation - Gemfile
+
+source "https://rubygems.org"
+
+# GitHub Pages gem
+gem "github-pages", group: :jekyll_plugins
+
+# Jekyll and core plugins
+gem "jekyll", "~> 3.9.0"
+gem "kramdown-parser-gfm"
+
+# Essential plugins for documentation
+group :jekyll_plugins do
+  gem "jekyll-feed", "~> 0.12"
+  gem "jekyll-sitemap"
+  gem "jekyll-seo-tag"
+  gem "jekyll-redirect-from"
+  gem "jekyll-paginate"
+  gem "jekyll-gist"
+  gem "jekyll-github-metadata"
+  gem "jekyll-relative-links"
+  gem "jekyll-optional-front-matter"
+  gem "jekyll-readme-index"
+  gem "jekyll-default-layout"
+  gem "jekyll-titles-from-headings"
+end
+
+# Performance and optimization
+gem "jekyll-compress-html"
+gem "jekyll-minifier"
+
+# Development and testing
+group :development, :test do
+  gem "html-proofer"
+  gem "rake"
+  gem "rspec"
+end
+
+# Windows and JRuby compatibility
+platforms :mingw, :x64_mingw, :mswin, :jruby do
+  gem "tzinfo", "~> 1.2"
+  gem "tzinfo-data"
+end
+
+# Performance booster for watching directories on Windows
+gem "wdm", "~> 0.1.1", :platforms => [:mingw, :x64_mingw, :mswin]
+
+# Lock http_parser.rb for JRuby builds
+gem "http_parser.rb", "~> 0.6.0", :platforms => [:jruby]
