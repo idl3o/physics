@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Developer Quick Start Guide for Reality Protocol - Build consciousness-aware applications">
+    <meta name="keywords" content="developer guide, reality protocol, consciousness computing, infinite dimensions">
+    <meta name="author" content="Reality Protocol Foundation">
+    
+    <title>Developer Quick Start Guide | Reality Protocol</title>
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Charter:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    
+    <!-- Shared Research Portal Styling -->
+    <link rel="stylesheet" href="../../assets/css/research-portal.css">
+    
+    <!-- Syntax highlighting -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/themes/prism.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/components/prism-core.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/plugins/autoloader/prism-autoloader.min.js"></script>
+</head>
+<body>
+    <!-- Header -->
+    <header class="main-header">
+        <div class="header-container">
+            <a href="../../index.html" class="site-logo">
+                <div class="logo-icon">∞</div>
+                <div>
+                    <div class="site-title">Reality Protocol</div>
+                    <div class="site-subtitle">Research Archive</div>
+                </div>
+            </a>
+            
+            <div class="global-search">
+                <div class="search-container">
+                    <input type="search" class="search-input" placeholder="Search documentation..." id="global-search">
+                    <span class="search-icon">🔍</span>
+                </div>
+            </div>
+            
+            <nav class="header-nav">
+                <a href="../../index.html" class="header-link">Home</a>
+                <a href="../technical/api_reference.html" class="header-link">API</a>
+                <a href="../community/contributing.html" class="header-link">Community</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <div class="main-container">
+        <main class="content-main">
+            <!-- Breadcrumbs -->
+            <nav class="breadcrumbs">
+                <a href="../../index.html">Reality Protocol</a> → 
+                <a href="../README.html">Documentation</a> → 
+                <a href="README.html">Developer</a> → 
+                <span>Quick Start</span>
+            </nav>
+
+            <!-- Article Content -->
+            <article class="article-content">
+                <header>
+                    <h1 class="article-title">Developer Quick Start Guide</h1>
+                    <p class="article-subtitle">Build Your First Consciousness-Aware Application</p>
+                    
+                    <div class="article-meta">
+                        <span>🚀 Guide</span>
+                        <span>📖 25 pages</span>
+                        <span>👨‍💻 Developers</span>
+                        <span>⏱️ 30 min read</span>
+                        <span>📅 January 2025</span>
+                    </div>
+                </header>
+
+                <!-- Table of Contents -->
+                <div class="table-of-contents">
+                    <h2 class="toc-title">Quick Start Steps</h2>
+                    <ul class="toc-list">
+                        <li class="toc-item"><a href="#prerequisites" class="toc-link">1. Prerequisites</a></li>
+                        <li class="toc-item"><a href="#installation" class="toc-link">2. Installation</a></li>
+                        <li class="toc-item"><a href="#hello-reality" class="toc-link">3. Hello Reality App</a></li>
+                        <li class="toc-item"><a href="#consciousness-integration" class="toc-link">4. Consciousness Integration</a></li>
+                        <li class="toc-item"><a href="#deployment" class="toc-link">5. Deployment</a></li>
+                        <li class="toc-item"><a href="#next-steps" class="toc-link">6. Next Steps</a></li>
+                    </ul>
+                </div>
+
+                <!-- Prerequisites -->
+                <section id="prerequisites">
+                    <h2>1. Prerequisites</h2>
+                    <p>Before building with Reality Protocol, ensure you have the following:</p>
+                    
+                    <ul>
+                        <li><strong>Node.js</strong> v18+ and npm/yarn</li>
+                        <li><strong>Basic understanding</strong> of JavaScript/TypeScript</li>
+                        <li><strong>Consciousness curiosity</strong> - openness to new paradigms</li>
+                        <li><strong>Quantum mindset</strong> - comfort with uncertainty and emergence</li>
+                    </ul>
+
+                    <div class="alert alert-info">
+                        <strong>New to infinite-dimensional concepts?</strong> Start with our <a href="../../whitepapers/reality_exposition_infinite_dimensionality.html">accessible Reality Exposition</a> to understand the foundational concepts.
+                    </div>
+                </section>
+
+                <!-- Installation -->
+                <section id="installation">
+                    <h2>2. Installation</h2>
+                    <p>Install the Reality Protocol SDK:</p>
+                    
+                    <pre><code class="language-bash">npm install @reality-protocol/sdk
+# or
+yarn add @reality-protocol/sdk</code></pre>
+
+                    <p>Initialize your first Reality Protocol project:</p>
+                    
+                    <pre><code class="language-bash">npx create-reality-app my-consciousness-app
+cd my-consciousness-app
+npm start</code></pre>
+                </section>
+
+                <!-- Hello Reality App -->
+                <section id="hello-reality">
+                    <h2>3. Hello Reality App</h2>
+                    <p>Create your first consciousness-aware application:</p>
+                    
+                    <pre><code class="language-javascript">import { RealityProtocol, ConsciousnessField } from '@reality-protocol/sdk';
+
+// Initialize Reality Protocol
+const reality = new RealityProtocol({
+  dimensions: 'infinite',
+  consciousness: 'aware',
+  consensus: 'quantum'
+});
+
+// Create a consciousness field
+const consciousnessField = new ConsciousnessField({
+  observer: 'developer',
+  intention: 'learning',
+  emergence: true
+});
+
+// Your first reality-aware function
+async function helloReality() {
+  const greeting = await reality.emerge({
+    pattern: 'greeting',
+    context: consciousnessField,
+    dimensions: ['classical', 'quantum', 'consciousness']
+  });
+  
+  console.log('Hello from infinite dimensions!', greeting);
+  return greeting;
+}
+
+// Execute with consciousness awareness
+helloReality();</code></pre>
+
+                    <div class="alert alert-success">
+                        <strong>Consciousness Integration Active!</strong> Your application is now connected to infinite-dimensional reality. Notice how the greeting emerges differently each time based on your consciousness state.
+                    </div>
+                </section>
+
+                <!-- Consciousness Integration -->
+                <section id="consciousness-integration">
+                    <h2>4. Consciousness Integration</h2>
+                    <p>Reality Protocol's unique feature is consciousness-aware computing. Here's how to integrate consciousness into your applications:</p>
+                    
+                    <pre><code class="language-javascript">// Consciousness-aware data processing
+const processData = async (data, userConsciousness) => {
+  return await reality.process(data, {
+    observer: userConsciousness,
+    preserveInformation: true,
+    enhanceEmergence: true,
+    quantumCoherence: true
+  });
+};
+
+// Adaptive UI based on consciousness state
+const adaptiveInterface = reality.createInterface({
+  adaptation: 'consciousness',
+  responsiveness: 'infinite',
+  userExperience: 'transcendent'
+});</code></pre>
+                </section>
+
+                <!-- Deployment -->
+                <section id="deployment">
+                    <h2>5. Deployment</h2>
+                    <p>Deploy your consciousness-aware application to the Reality Protocol network:</p>
+                    
+                    <pre><code class="language-bash"># Build for infinite dimensions
+npm run build:infinite
+
+# Deploy to Reality Protocol network
+npx reality-deploy --network mainnet --consciousness-level aware</code></pre>
+                </section>
+
+                <div class="alert alert-warning">
+                    <strong>Full Documentation Available:</strong> This is a condensed quick start guide. The complete 25-page developer guide with detailed examples, advanced patterns, and troubleshooting is available in the <a href="quick_start.md">full markdown version</a>.
+                </div>
+
+                <!-- Footer -->
+                <footer style="margin-top: 3rem; padding-top: 2rem; border-top: 1px solid var(--color-border);">
+                    <p><strong>Next Steps:</strong></p>
+                    <ul>
+                        <li><a href="../technical/api_reference.html">Complete API Reference</a></li>
+                        <li><a href="../examples/">Code Examples & Tutorials</a></li>
+                        <li><a href="../community/contributing.html">Join the Developer Community</a></li>
+                        <li><a href="../../whitepapers/">Understand the Theory</a></li>
+                    </ul>
+                </footer>
+            </article>
+        </main>
+
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <!-- Quick Navigation -->
+            <div class="sidebar-section">
+                <h3 class="sidebar-title">Developer Resources</h3>
+                <div class="sidebar-content">
+                    <a href="#installation" class="sidebar-link">
+                        <span class="sidebar-icon">⚡</span>
+                        <div>
+                            <div>Installation</div>
+                            <div class="sidebar-meta">Get started quickly</div>
+                        </div>
+                    </a>
+                    <a href="#hello-reality" class="sidebar-link">
+                        <span class="sidebar-icon">🌟</span>
+                        <div>
+                            <div>Hello Reality</div>
+                            <div class="sidebar-meta">First app example</div>
+                        </div>
+                    </a>
+                    <a href="../technical/api_reference.html" class="sidebar-link">
+                        <span class="sidebar-icon">📋</span>
+                        <div>
+                            <div>API Reference</div>
+                            <div class="sidebar-meta">Complete documentation</div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Examples -->
+            <div class="sidebar-section">
+                <h3 class="sidebar-title">Code Examples</h3>
+                <div class="sidebar-content">
+                    <a href="../examples/basic/hello_reality.js" class="sidebar-link">
+                        <span class="sidebar-icon">👋</span>
+                        <div>
+                            <div>Hello Reality</div>
+                            <div class="sidebar-meta">Basic example</div>
+                        </div>
+                    </a>
+                    <a href="../examples/" class="sidebar-link">
+                        <span class="sidebar-icon">🎯</span>
+                        <div>
+                            <div>More Examples</div>
+                            <div class="sidebar-meta">Advanced tutorials</div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Community -->
+            <div class="sidebar-section">
+                <h3 class="sidebar-title">Community</h3>
+                <div class="sidebar-content">
+                    <a href="../community/contributing.html" class="sidebar-link">
+                        <span class="sidebar-icon">🤝</span>
+                        <div>
+                            <div>Contributing</div>
+                            <div class="sidebar-meta">Join the project</div>
+                        </div>
+                    </a>
+                    <a href="https://discord.gg/reality-protocol" class="sidebar-link" target="_blank">
+                        <span class="sidebar-icon">💬</span>
+                        <div>
+                            <div>Discord</div>
+                            <div class="sidebar-meta">Developer chat</div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </aside>
+    </div>
+
+    <!-- Footer -->
+    <footer class="main-footer">
+        <div class="footer-container">
+            <p>Reality Protocol Research Archive - Licensed under the <a href="../../LICENSE">Infinite-Dimensional Open Source License (IDOSL)</a></p>
+        </div>
+    </footer>
+
+    <!-- Search functionality -->
+    <script src="../../assets/js/main.js"></script>
+</body>
+</html>
