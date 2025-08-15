@@ -45,8 +45,7 @@ The documentation is hosted as an advanced interactive website with cutting-edge
 - **⚡ Performance** - Core Web Vitals optimized
 
 ### 🌐 Live Website
-- **Primary**: [docs.reality-protocol.org](https://docs.reality-protocol.org)
-- **GitHub Pages**: [reality-protocol.github.io](https://reality-protocol.github.io)
+- **GitHub Pages**: [(https://github.com/idl3o/physics)]
 
 ## 🛠️ Technical Stack
 
