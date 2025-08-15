@@ -44,7 +44,7 @@ The documentation is hosted as an advanced interactive website with cutting-edge
 - **⚡ Performance** - Core Web Vitals optimized
 
 ### 🌐 Live Website
-- **GitHub Pages**: [(https://github.com/idl3o/physics)]
+- **GitHub Pages**: https://github.com/idl3o/physics
 
 ## 🛠️ Technical Stack
 
