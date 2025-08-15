@@ -66,36 +66,6 @@ The documentation is hosted as an advanced interactive website with cutting-edge
 - **Caching Optimization** for repeat visits
 - **Mobile-First** responsive design
 
-## 🚀 Quick Start
-
-### View the Documentation
-1. Visit **[docs.reality-protocol.org](https://docs.reality-protocol.org)**
-2. Choose your audience type (Developer, Researcher, Explorer, Investor)
-3. Follow the guided learning path
-4. Explore interactive visualizations
-
-### For Developers
-```bash
-# Start with the developer quick start
-# Visit: docs.reality-protocol.org/reality_protocol/developer/quick_start.html
-
-# Try the interactive examples
-# Visit: docs.reality-protocol.org/reality_protocol/examples/basic/
-
-# Join the community
-# Discord: https://discord.gg/reality-protocol
-```
-
-### For Researchers
-```bash
-# Read the mathematical foundations
-# Visit: docs.reality-protocol.org/whitepapers/mathematical_foundations_infinite_dimensionality.html
-
-# Explore collaboration opportunities  
-# Visit: docs.reality-protocol.org/reality_protocol/community/research_collaboration.html
-
-# Apply for research grants
-# Email: research@reality-protocol.org
 ```
 
 ## 📁 Repository Structure
@@ -138,12 +108,6 @@ We welcome contributions from the global community!
 - **🎨 Interactive Features** - Enhance visualizations and UX
 - **🔧 Technical** - Optimize performance, add features
 - **🤝 Community** - Help others learn and grow
-
-### Getting Started
-1. Read the [Contributing Guide](docs/reality_protocol/community/contributing.md)
-2. Check [Open Issues](https://github.com/reality-protocol/documentation/issues)
-3. Join our [Discord](https://discord.gg/reality-protocol)
-4. Fork the repository and submit a PR
 
 ### Development Setup
 ```bash
@@ -191,25 +155,6 @@ bundle exec jekyll serve
 - Standard curriculum in CS and physics programs  
 - Primary reference for infinite-dimensional computing
 - Catalyst for consciousness evolution worldwide
-
-## 🔗 Links and Resources
-
-### 🌐 Website and Documentation
-- **Main Documentation**: [docs.reality-protocol.org](https://docs.reality-protocol.org)
-- **GitHub Repository**: [github.com/reality-protocol/documentation](https://github.com/reality-protocol/documentation)
-
-### 👥 Community
-- **Discord**: [discord.gg/reality-protocol](https://discord.gg/reality-protocol)
-- **Twitter**: [@RealityProtocol](https://twitter.com/RealityProtocol)  
-- **GitHub Org**: [github.com/reality-protocol](https://github.com/reality-protocol)
-- **Reddit**: [r/RealityProtocol](https://reddit.com/r/RealityProtocol)
-
-### 📧 Contact
-- **General**: info@reality-protocol.org
-- **Developer Support**: dev-support@reality-protocol.org
-- **Research Inquiries**: research@reality-protocol.org  
-- **Press & Media**: press@reality-protocol.org
-- **Partnerships**: partnerships@reality-protocol.org
 
 ## 📄 License
 
