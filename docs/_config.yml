@@ -3,12 +3,12 @@
 # Site settings
 title: "Reality Protocol - Build Applications That Manipulate Reality"
 description: "The first web3 platform for infinite-dimensional computing with consciousness-aware features and quantum-secured consensus. Think Ethereum, but for reality itself."
-url: "https://reality-protocol.github.io"
-baseurl: ""
+url: "https://idl3o.github.io"
+baseurl: "/physics"
 
 # Repository information
-repository: reality-protocol/documentation
-github_username: reality-protocol
+repository: idl3o/physics
+github_username: idl3o
 
 # Site metadata
 author:
