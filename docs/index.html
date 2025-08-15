@@ -1,884 +1,1247 @@
 <!DOCTYPE html>
-<html lang="en" class="no-js">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Reality Protocol - Humanity's first web3 technology for infinite-dimensional computing and consciousness-aware applications">
-    <meta name="keywords" content="infinite dimensional computing, consciousness aware technology, quantum blockchain, reality protocol, web3 reality">
+    <meta name="description" content="Reality Protocol Research Archive - Comprehensive documentation for infinite-dimensional computing, consciousness-aware technology, and quantum consensus systems">
+    <meta name="keywords" content="infinite dimensional computing, consciousness technology, quantum blockchain, reality protocol, research archive, documentation">
     <meta name="author" content="Reality Protocol Foundation">
     
     <!-- Open Graph / Social Media -->
-    <meta property="og:title" content="Reality Protocol - Build Applications That Manipulate Reality">
-    <meta property="og:description" content="The first web3 platform for infinite-dimensional computing with consciousness-aware features and quantum-secured consensus">
-    <meta property="og:image" content="https://reality-protocol.org/assets/images/reality-protocol-preview.png">
-    <meta property="og:url" content="https://reality-protocol.org">
+    <meta property="og:title" content="Reality Protocol Research Archive">
+    <meta property="og:description" content="Comprehensive research documentation for humanity's first infinite-dimensional computing platform">
+    <meta property="og:image" content="https://docs.reality-protocol.org/assets/images/reality-protocol-preview.png">
+    <meta property="og:url" content="https://docs.reality-protocol.org">
     <meta property="og:type" content="website">
     
     <!-- Twitter Cards -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Reality Protocol - Build Applications That Manipulate Reality">
-    <meta name="twitter:description" content="The first web3 platform for infinite-dimensional computing with consciousness-aware features">
-    <meta name="twitter:image" content="https://reality-protocol.org/assets/images/reality-protocol-preview.png">
+    <meta name="twitter:title" content="Reality Protocol Research Archive">
+    <meta name="twitter:description" content="Comprehensive research documentation for infinite-dimensional computing">
+    <meta name="twitter:image" content="https://docs.reality-protocol.org/assets/images/reality-protocol-preview.png">
     
-    <title>Reality Protocol - Build Applications That Manipulate Reality Itself</title>
-    
-    <!-- Preconnect for performance -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <title>Reality Protocol Research Archive</title>
     
     <!-- Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Charter:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
     
     <!-- Icons -->
-    <link rel="icon" type="image/svg+xml" href="/assets/images/favicon.svg">
-    <link rel="icon" type="image/png" href="/assets/images/favicon.png">
+    <link rel="icon" type="image/x-icon" href="/assets/images/favicon.ico">
     
-    <!-- Stylesheets -->
-    <link rel="stylesheet" href="/assets/css/main.css">
-    <link rel="stylesheet" href="/assets/css/components.css">
-    <link rel="stylesheet" href="/assets/css/animations.css">
-    
-    <!-- Critical CSS inlined for performance -->
     <style>
+        /* Research Platform Inspired Design */
         :root {
-            --color-primary: #6366f1;
-            --color-secondary: #8b5cf6;
-            --color-accent: #06b6d4;
-            --color-success: #10b981;
-            --color-warning: #f59e0b;
-            --color-error: #ef4444;
-            --color-bg: #0f0f23;
-            --color-bg-secondary: #1a1a3a;
-            --color-bg-tertiary: #252547;
-            --color-text: #e2e8f0;
-            --color-text-secondary: #94a3b8;
-            --color-border: #334155;
-            --font-primary: 'Inter', sans-serif;
-            --font-mono: 'JetBrains Mono', monospace;
-            --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
-            --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1);
-            --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1);
-            --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.1);
+            --color-primary: #0645ad;
+            --color-secondary: #6366f1;
+            --color-accent: #0969da;
+            --color-success: #1a7f37;
+            --color-warning: #bf8700;
+            --color-error: #cf222e;
+            --color-bg: #ffffff;
+            --color-bg-secondary: #f6f8fa;
+            --color-bg-tertiary: #eaeef2;
+            --color-text: #24292f;
+            --color-text-secondary: #656d76;
+            --color-text-muted: #8c959f;
+            --color-border: #d0d7de;
+            --color-border-light: #e1e7ef;
+            --font-primary: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            --font-serif: 'Charter', 'Times New Roman', serif;
+            --font-mono: 'JetBrains Mono', 'Monaco', 'Consolas', monospace;
+            --shadow-sm: 0 1px 2px rgba(0,0,0,0.05);
+            --shadow-md: 0 4px 6px rgba(0,0,0,0.07);
+            --shadow-lg: 0 10px 15px rgba(0,0,0,0.1);
         }
-        
+
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
-        
-        html {
-            scroll-behavior: smooth;
-        }
-        
+
         body {
             font-family: var(--font-primary);
             background: var(--color-bg);
             color: var(--color-text);
             line-height: 1.6;
-            overflow-x: hidden;
+            font-size: 14px;
         }
-        
-        .hero-section {
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            position: relative;
-            overflow: hidden;
-            background: linear-gradient(135deg, var(--color-bg) 0%, var(--color-bg-secondary) 100%);
+
+        /* Header inspired by Wikipedia */
+        .main-header {
+            background: var(--color-bg);
+            border-bottom: 1px solid var(--color-border);
+            padding: 0.75rem 0;
         }
-        
-        .hero-background {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            opacity: 0.1;
-            background: url('/assets/images/quantum-field.svg') repeat;
-            animation: quantum-field 20s linear infinite;
-        }
-        
-        @keyframes quantum-field {
-            0% { transform: translateX(0) translateY(0); }
-            100% { transform: translateX(-50px) translateY(-30px); }
-        }
-        
-        .hero-content {
-            text-align: center;
-            max-width: 1200px;
-            padding: 2rem;
-            z-index: 1;
-            position: relative;
-        }
-        
-        .hero-title {
-            font-size: clamp(2.5rem, 5vw, 4rem);
-            font-weight: 700;
-            margin-bottom: 1.5rem;
-            background: linear-gradient(135deg, var(--color-primary), var(--color-secondary), var(--color-accent));
-            background-clip: text;
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-size: 200% 200%;
-            animation: gradient-shift 3s ease-in-out infinite;
-        }
-        
-        @keyframes gradient-shift {
-            0%, 100% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-        }
-        
-        .hero-subtitle {
-            font-size: clamp(1.125rem, 2.5vw, 1.5rem);
-            color: var(--color-text-secondary);
-            margin-bottom: 2.5rem;
-            max-width: 800px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-        
-        .cta-buttons {
-            display: flex;
-            gap: 1.5rem;
-            justify-content: center;
-            flex-wrap: wrap;
-            margin-bottom: 3rem;
-        }
-        
-        .btn {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            padding: 0.875rem 2rem;
-            border-radius: 0.5rem;
-            font-weight: 600;
-            text-decoration: none;
-            transition: all 0.3s ease;
-            border: 2px solid transparent;
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .btn-primary {
-            background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
-            color: white;
-        }
-        
-        .btn-primary:hover {
-            transform: translateY(-2px);
-            box-shadow: var(--shadow-lg);
-        }
-        
-        .btn-outline {
-            border-color: var(--color-border);
-            color: var(--color-text);
-        }
-        
-        .btn-outline:hover {
-            border-color: var(--color-primary);
-            color: var(--color-primary);
-        }
-        
-        .audience-selector {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 1.5rem;
+
+        .header-container {
             max-width: 1200px;
             margin: 0 auto;
+            padding: 0 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
         }
-        
-        .audience-card {
-            background: var(--color-bg-secondary);
-            border: 1px solid var(--color-border);
-            border-radius: 1rem;
-            padding: 2rem;
-            transition: all 0.3s ease;
-            cursor: pointer;
-            position: relative;
-            overflow: hidden;
+
+        .site-logo {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            text-decoration: none;
+            color: var(--color-text);
         }
-        
-        .audience-card:hover {
-            transform: translateY(-4px);
-            box-shadow: var(--shadow-xl);
-            border-color: var(--color-primary);
-        }
-        
-        .audience-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 4px;
-            background: linear-gradient(90deg, var(--color-primary), var(--color-secondary));
-            opacity: 0;
-            transition: opacity 0.3s ease;
-        }
-        
-        .audience-card:hover::before {
-            opacity: 1;
-        }
-        
-        .loading {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: var(--color-bg);
-            z-index: 9999;
+
+        .logo-icon {
+            width: 32px;
+            height: 32px;
+            background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
+            border-radius: 6px;
+            display: flex;
             align-items: center;
             justify-content: center;
+            color: white;
+            font-weight: bold;
+            font-size: 18px;
         }
-        
-        .spinner {
-            width: 60px;
-            height: 60px;
-            border: 4px solid var(--color-border);
-            border-top: 4px solid var(--color-primary);
-            border-radius: 50%;
-            animation: spin 1s linear infinite;
+
+        .site-title {
+            font-size: 20px;
+            font-weight: 600;
+            color: var(--color-text);
         }
-        
-        @keyframes spin {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
+
+        .site-subtitle {
+            font-size: 12px;
+            color: var(--color-text-secondary);
+            font-weight: normal;
+        }
+
+        /* Global Search Bar */
+        .global-search {
+            flex: 1;
+            max-width: 500px;
+            margin: 0 2rem;
+            position: relative;
+        }
+
+        .search-container {
+            position: relative;
+            display: flex;
+        }
+
+        .search-input {
+            width: 100%;
+            padding: 0.5rem 1rem 0.5rem 2.5rem;
+            border: 2px solid var(--color-border);
+            border-radius: 6px;
+            font-size: 14px;
+            background: var(--color-bg);
+            transition: border-color 0.2s ease;
+        }
+
+        .search-input:focus {
+            outline: none;
+            border-color: var(--color-primary);
+            box-shadow: 0 0 0 3px rgba(6, 69, 173, 0.1);
+        }
+
+        .search-icon {
+            position: absolute;
+            left: 0.75rem;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--color-text-secondary);
+            pointer-events: none;
+        }
+
+        .search-suggestions {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            right: 0;
+            background: var(--color-bg);
+            border: 1px solid var(--color-border);
+            border-top: none;
+            border-radius: 0 0 6px 6px;
+            max-height: 300px;
+            overflow-y: auto;
+            z-index: 1000;
+            display: none;
+        }
+
+        .suggestion-item {
+            padding: 0.75rem 1rem;
+            cursor: pointer;
+            border-bottom: 1px solid var(--color-border-light);
+            transition: background-color 0.2s ease;
+        }
+
+        .suggestion-item:hover {
+            background: var(--color-bg-secondary);
+        }
+
+        .suggestion-title {
+            font-weight: 500;
+            margin-bottom: 0.25rem;
+        }
+
+        .suggestion-excerpt {
+            font-size: 12px;
+            color: var(--color-text-secondary);
+        }
+
+        /* Header Actions */
+        .header-actions {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .header-link {
+            color: var(--color-text-secondary);
+            text-decoration: none;
+            font-size: 13px;
+            padding: 0.25rem 0.5rem;
+            border-radius: 4px;
+            transition: all 0.2s ease;
+        }
+
+        .header-link:hover {
+            color: var(--color-primary);
+            background: var(--color-bg-secondary);
+        }
+
+        /* Main Content Layout */
+        .main-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1.5rem 1rem;
+            display: grid;
+            grid-template-columns: 1fr 300px;
+            gap: 2rem;
+        }
+
+        .main-content {
+            min-width: 0;
+        }
+
+        /* Main Article Style (Wikipedia inspired) */
+        .main-article {
+            background: var(--color-bg);
+            border: 1px solid var(--color-border);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .article-header {
+            padding: 1.5rem 2rem;
+            border-bottom: 1px solid var(--color-border);
+            background: var(--color-bg-secondary);
+        }
+
+        .article-title {
+            font-size: 32px;
+            font-weight: 400;
+            font-family: var(--font-serif);
+            margin-bottom: 0.5rem;
+            line-height: 1.3;
+        }
+
+        .article-subtitle {
+            font-size: 16px;
+            color: var(--color-text-secondary);
+            font-style: italic;
+        }
+
+        .article-meta {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-top: 1rem;
+            font-size: 12px;
+            color: var(--color-text-muted);
+        }
+
+        .meta-item {
+            display: flex;
+            align-items: center;
+            gap: 0.25rem;
+        }
+
+        .article-body {
+            padding: 2rem;
+        }
+
+        /* Infobox (Wikipedia style) */
+        .infobox {
+            float: right;
+            margin: 0 0 1rem 1rem;
+            width: 300px;
+            background: var(--color-bg-secondary);
+            border: 1px solid var(--color-border);
+            border-radius: 6px;
+            font-size: 13px;
+        }
+
+        .infobox-header {
+            background: var(--color-primary);
+            color: white;
+            padding: 0.75rem 1rem;
+            font-weight: 600;
+            text-align: center;
+        }
+
+        .infobox-content {
+            padding: 1rem;
+        }
+
+        .infobox-row {
+            display: flex;
+            margin-bottom: 0.75rem;
+            align-items: flex-start;
+        }
+
+        .infobox-label {
+            font-weight: 500;
+            min-width: 100px;
+            color: var(--color-text-secondary);
+        }
+
+        .infobox-value {
+            flex: 1;
+        }
+
+        /* Table of Contents */
+        .table-of-contents {
+            background: var(--color-bg-secondary);
+            border: 1px solid var(--color-border);
+            border-radius: 6px;
+            padding: 1rem;
+            margin: 1.5rem 0;
+            display: inline-block;
+            min-width: 300px;
+        }
+
+        .toc-title {
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: var(--color-text);
+        }
+
+        .toc-list {
+            list-style: none;
+        }
+
+        .toc-item {
+            margin-bottom: 0.5rem;
+        }
+
+        .toc-link {
+            color: var(--color-primary);
+            text-decoration: none;
+            font-size: 13px;
+            display: block;
+            padding: 0.25rem 0;
+            transition: color 0.2s ease;
+        }
+
+        .toc-link:hover {
+            color: var(--color-secondary);
+            text-decoration: underline;
+        }
+
+        .toc-item.level-2 { padding-left: 1rem; }
+        .toc-item.level-3 { padding-left: 2rem; }
+
+        /* Sidebar (Internet Archive inspired) */
+        .sidebar {
+            background: var(--color-bg-secondary);
+            border: 1px solid var(--color-border);
+            border-radius: 8px;
+            padding: 1.5rem;
+            height: fit-content;
+            position: sticky;
+            top: 1rem;
+        }
+
+        .sidebar-section {
+            margin-bottom: 2rem;
+        }
+
+        .sidebar-title {
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: var(--color-text);
+            font-size: 16px;
+        }
+
+        .sidebar-list {
+            list-style: none;
+        }
+
+        .sidebar-item {
+            margin-bottom: 0.75rem;
+        }
+
+        .sidebar-link {
+            color: var(--color-primary);
+            text-decoration: none;
+            font-size: 13px;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.5rem;
+            border-radius: 4px;
+            transition: all 0.2s ease;
+        }
+
+        .sidebar-link:hover {
+            background: var(--color-bg-tertiary);
+            color: var(--color-secondary);
+        }
+
+        .sidebar-icon {
+            font-size: 16px;
+        }
+
+        .sidebar-meta {
+            font-size: 11px;
+            color: var(--color-text-muted);
+            margin-top: 0.25rem;
+        }
+
+        /* Statistics Box */
+        .stats-box {
+            background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
+            color: white;
+            padding: 1.5rem;
+            border-radius: 6px;
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .stats-title {
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+        }
+
+        .stat-item {
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 24px;
+            font-weight: 700;
+            display: block;
+        }
+
+        .stat-label {
+            font-size: 11px;
+            opacity: 0.9;
+            margin-top: 0.25rem;
+        }
+
+        /* Content Sections */
+        .content-section {
+            margin-bottom: 2rem;
+        }
+
+        .section-title {
+            font-size: 20px;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: var(--color-text);
+            border-bottom: 1px solid var(--color-border);
+            padding-bottom: 0.5rem;
+        }
+
+        .content-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1rem;
+        }
+
+        .content-card {
+            background: var(--color-bg);
+            border: 1px solid var(--color-border);
+            border-radius: 6px;
+            padding: 1.5rem;
+            transition: all 0.2s ease;
+        }
+
+        .content-card:hover {
+            box-shadow: var(--shadow-md);
+            border-color: var(--color-primary);
+        }
+
+        .card-title {
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: var(--color-text);
+        }
+
+        .card-title a {
+            color: var(--color-primary);
+            text-decoration: none;
+        }
+
+        .card-title a:hover {
+            text-decoration: underline;
+        }
+
+        .card-meta {
+            font-size: 12px;
+            color: var(--color-text-muted);
+            margin-bottom: 0.75rem;
+        }
+
+        .card-description {
+            color: var(--color-text-secondary);
+            font-size: 13px;
+            line-height: 1.5;
+            margin-bottom: 1rem;
+        }
+
+        .card-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .tag {
+            background: var(--color-bg-tertiary);
+            color: var(--color-text-secondary);
+            padding: 0.25rem 0.5rem;
+            border-radius: 12px;
+            font-size: 11px;
+            text-decoration: none;
+            transition: all 0.2s ease;
+        }
+
+        .tag:hover {
+            background: var(--color-primary);
+            color: white;
+        }
+
+        /* Footer */
+        .main-footer {
+            background: var(--color-bg-secondary);
+            border-top: 1px solid var(--color-border);
+            padding: 2rem 0;
+            margin-top: 3rem;
+        }
+
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1rem;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+        }
+
+        .footer-section h4 {
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: var(--color-text);
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-links a {
+            color: var(--color-text-secondary);
+            text-decoration: none;
+            font-size: 13px;
+            transition: color 0.2s ease;
+        }
+
+        .footer-links a:hover {
+            color: var(--color-primary);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .main-container {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+
+            .sidebar {
+                position: static;
+                order: -1;
+            }
+
+            .infobox {
+                float: none;
+                margin: 1rem 0;
+                width: 100%;
+            }
+
+            .header-container {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .global-search {
+                margin: 0;
+                max-width: none;
+            }
+
+            .article-body {
+                padding: 1rem;
+            }
+
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .content-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .stats-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .article-title {
+                font-size: 24px;
+            }
+
+            .sidebar {
+                padding: 1rem;
+            }
+        }
+
+        /* Loading and Animations */
+        .fade-in {
+            animation: fadeIn 0.3s ease-in;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Accessibility */
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border: 0;
+        }
+
+        /* Focus styles */
+        .search-input:focus,
+        .header-link:focus,
+        .sidebar-link:focus,
+        .content-card:focus {
+            outline: 2px solid var(--color-primary);
+            outline-offset: 2px;
         }
     </style>
 </head>
 <body>
-    <!-- Loading Screen -->
-    <div id="loading" class="loading">
-        <div class="spinner"></div>
-    </div>
+    <!-- Header -->
+    <header class="main-header">
+        <div class="header-container">
+            <a href="/" class="site-logo">
+                <div class="logo-icon">∞</div>
+                <div>
+                    <div class="site-title">Reality Protocol</div>
+                    <div class="site-subtitle">Research Archive</div>
+                </div>
+            </a>
 
-    <!-- Navigation -->
-    <nav class="navbar" id="navbar">
-        <div class="nav-container">
-            <div class="nav-brand">
-                <img src="/assets/images/reality-protocol-logo.svg" alt="Reality Protocol" width="40" height="40">
-                <span class="nav-brand-text">Reality Protocol</span>
+            <div class="global-search">
+                <div class="search-container">
+                    <input type="search" class="search-input" placeholder="Search 200+ pages of documentation..." id="global-search">
+                    <span class="search-icon">🔍</span>
+                    <div class="search-suggestions" id="search-suggestions"></div>
+                </div>
             </div>
-            <div class="nav-links">
-                <a href="#home" class="nav-link active">Home</a>
-                <a href="#documentation" class="nav-link">Docs</a>
-                <a href="#community" class="nav-link">Community</a>
-                <a href="#research" class="nav-link">Research</a>
-                <div class="nav-dropdown">
-                    <button class="nav-link dropdown-trigger">Get Started ↓</button>
-                    <div class="dropdown-content">
-                        <a href="#developers" class="dropdown-item">For Developers</a>
-                        <a href="#researchers" class="dropdown-item">For Researchers</a>
-                        <a href="#explorers" class="dropdown-item">For Consciousness Explorers</a>
-                        <a href="#investors" class="dropdown-item">For Investors</a>
+
+            <nav class="header-actions">
+                <a href="#contribute" class="header-link">Contribute</a>
+                <a href="#community" class="header-link">Community</a>
+                <a href="#about" class="header-link">About</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main-container">
+        <div class="main-content">
+            <article class="main-article">
+                <header class="article-header">
+                    <h1 class="article-title">Reality Protocol</h1>
+                    <p class="article-subtitle">Humanity's first web3 platform for infinite-dimensional computing with consciousness-aware features</p>
+                    <div class="article-meta">
+                        <span class="meta-item">📄 200+ pages</span>
+                        <span class="meta-item">🔬 4 major whitepapers</span>
+                        <span class="meta-item">🌍 Open access</span>
+                        <span class="meta-item">📅 Updated Jan 15, 2025</span>
+                    </div>
+                </header>
+
+                <div class="article-body">
+                    <!-- Infobox -->
+                    <div class="infobox">
+                        <div class="infobox-header">Project Information</div>
+                        <div class="infobox-content">
+                            <div class="infobox-row">
+                                <span class="infobox-label">Type</span>
+                                <span class="infobox-value">Web3 Protocol</span>
+                            </div>
+                            <div class="infobox-row">
+                                <span class="infobox-label">Focus</span>
+                                <span class="infobox-value">Infinite-dimensional computing</span>
+                            </div>
+                            <div class="infobox-row">
+                                <span class="infobox-label">License</span>
+                                <span class="infobox-value">IDOSL v1.0</span>
+                            </div>
+                            <div class="infobox-row">
+                                <span class="infobox-label">Status</span>
+                                <span class="infobox-value">Research phase</span>
+                            </div>
+                            <div class="infobox-row">
+                                <span class="infobox-label">Founded</span>
+                                <span class="infobox-value">2025</span>
+                            </div>
+                            <div class="infobox-row">
+                                <span class="infobox-label">Website</span>
+                                <span class="infobox-value"><a href="https://reality-protocol.org">reality-protocol.org</a></span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Table of Contents -->
+                    <div class="table-of-contents">
+                        <div class="toc-title">Contents</div>
+                        <ol class="toc-list">
+                            <li class="toc-item"><a href="#overview" class="toc-link">1. Overview</a></li>
+                            <li class="toc-item"><a href="#core-concepts" class="toc-link">2. Core Concepts</a></li>
+                            <li class="toc-item level-2"><a href="#infinite-dimensions" class="toc-link">2.1 Infinite-dimensional computing</a></li>
+                            <li class="toc-item level-2"><a href="#consciousness-awareness" class="toc-link">2.2 Consciousness-aware technology</a></li>
+                            <li class="toc-item level-2"><a href="#quantum-consensus" class="toc-link">2.3 Quantum Observer Consensus</a></li>
+                            <li class="toc-item"><a href="#documentation" class="toc-link">3. Documentation</a></li>
+                            <li class="toc-item"><a href="#community" class="toc-link">4. Community</a></li>
+                            <li class="toc-item"><a href="#references" class="toc-link">5. References</a></li>
+                        </ol>
+                    </div>
+
+                    <!-- Main Content -->
+                    <section id="overview" class="content-section">
+                        <h2 class="section-title">Overview</h2>
+                        <p>The <strong>Reality Protocol</strong> is a revolutionary web3 platform that represents humanity's first attempt at creating infrastructure for <em>infinite-dimensional computing</em> with <em>consciousness-aware features</em> and <em>quantum-secured consensus</em>. Unlike traditional blockchain platforms that operate in finite computational spaces, Reality Protocol leverages mathematical frameworks from infinite-dimensional analysis to create a computing substrate capable of representing and manipulating reality itself.</p>
+                        
+                        <p>The protocol introduces several groundbreaking concepts:</p>
+                        <ul>
+                            <li><strong>Infinite-Dimensional Emergence Theory (IDET)</strong> - A mathematical framework for understanding how complex systems emerge from infinite-dimensional substrates</li>
+                            <li><strong>Consciousness-aware computing</strong> - Technology that adapts to individual consciousness patterns and complexity levels</li>
+                            <li><strong>Quantum Observer Consensus (QOC)</strong> - A consensus mechanism using quantum entanglement for unbreakable security</li>
+                            <li><strong>Reality creation tools</strong> - Applications for building and customizing infinite-dimensional spaces</li>
+                        </ul>
+
+                        <p>The comprehensive documentation archive contains over <strong>200 pages</strong> of research, technical specifications, user guides, and theoretical foundations, making it one of the most extensive documentation suites for any emerging technology platform.</p>
+                    </section>
+
+                    <section id="core-concepts" class="content-section">
+                        <h2 class="section-title">Core Concepts</h2>
+                        
+                        <h3 id="infinite-dimensions">Infinite-dimensional computing</h3>
+                        <p>Traditional computing operates in finite-dimensional spaces, limiting the complexity of problems that can be addressed. Reality Protocol introduces <em>infinite-dimensional computing</em>, where computational operations occur in mathematical spaces with unlimited spatial dimensions. This enables:</p>
+                        <ul>
+                            <li>Complete representation of any physical system without approximation</li>
+                            <li>Adaptive convergence algorithms that automatically adjust dimensional complexity</li>
+                            <li>Information conservation across all transformations</li>
+                        </ul>
+
+                        <h3 id="consciousness-awareness">Consciousness-aware technology</h3>
+                        <p>Reality Protocol incorporates consciousness as a fundamental computational substrate. The platform includes:</p>
+                        <ul>
+                            <li>Consciousness authentication and measurement systems</li>
+                            <li>Adaptive interfaces that respond to consciousness complexity</li>
+                            <li>Collective consciousness networking capabilities</li>
+                            <li>Privacy-preserving consciousness protocols</li>
+                        </ul>
+
+                        <h3 id="quantum-consensus">Quantum Observer Consensus</h3>
+                        <p>The platform employs a novel consensus mechanism called <em>Quantum Observer Consensus (QOC)</em>, which uses quantum entanglement to achieve Byzantine fault tolerance with unprecedented security guarantees. This system enables decentralized agreement about reality states across infinite-dimensional spaces.</p>
+                    </section>
+
+                    <section id="documentation" class="content-section">
+                        <h2 class="section-title">Documentation Archive</h2>
+                        
+                        <div class="content-grid">
+                            <div class="content-card">
+                                <h3 class="card-title"><a href="whitepapers/infinite_dimensionality_emergence.html">Infinite Dimensionality & Physical Emergence</a></h3>
+                                <div class="card-meta">Whitepaper • 69 pages • Advanced</div>
+                                <p class="card-description">Core theoretical framework introducing Infinite-Dimensional Emergence Theory (IDET) with comprehensive mathematical foundations and computational implementations.</p>
+                                <div class="card-tags">
+                                    <span class="tag">theory</span>
+                                    <span class="tag">mathematics</span>
+                                    <span class="tag">physics</span>
+                                </div>
+                            </div>
+
+                            <div class="content-card">
+                                <h3 class="card-title"><a href="whitepapers/mathematical_foundations_infinite_dimensionality.html">Mathematical Foundations</a></h3>
+                                <div class="card-meta">Whitepaper • 45 pages • Expert</div>
+                                <p class="card-description">Rigorous mathematical formalism including theorems, proofs, and formal definitions for infinite-dimensional emergence processes.</p>
+                                <div class="card-tags">
+                                    <span class="tag">mathematics</span>
+                                    <span class="tag">proofs</span>
+                                    <span class="tag">analysis</span>
+                                </div>
+                            </div>
+
+                            <div class="content-card">
+                                <h3 class="card-title"><a href="reality_protocol/developer/quick_start.html">Developer Quick Start</a></h3>
+                                <div class="card-meta">Guide • 25 pages • Intermediate</div>
+                                <p class="card-description">Comprehensive guide to building consciousness-aware applications using the Reality Protocol SDK and development tools.</p>
+                                <div class="card-tags">
+                                    <span class="tag">development</span>
+                                    <span class="tag">tutorial</span>
+                                    <span class="tag">SDK</span>
+                                </div>
+                            </div>
+
+                            <div class="content-card">
+                                <h3 class="card-title"><a href="whitepapers/reality_exposition_infinite_dimensionality.html">Reality Exposition</a></h3>
+                                <div class="card-meta">Whitepaper • 42 pages • Beginner</div>
+                                <p class="card-description">Accessible natural language explanation of infinite-dimensional concepts and their practical implications for human consciousness.</p>
+                                <div class="card-tags">
+                                    <span class="tag">accessible</span>
+                                    <span class="tag">consciousness</span>
+                                    <span class="tag">philosophy</span>
+                                </div>
+                            </div>
+
+                            <div class="content-card">
+                                <h3 class="card-title"><a href="reality_protocol/technical/api_reference.html">API Reference</a></h3>
+                                <div class="card-meta">Reference • 45 pages • Intermediate</div>
+                                <p class="card-description">Complete API documentation covering RealityProtocol interfaces, quantum computing integration, and consciousness authentication.</p>
+                                <div class="card-tags">
+                                    <span class="tag">API</span>
+                                    <span class="tag">reference</span>
+                                    <span class="tag">technical</span>
+                                </div>
+                            </div>
+
+                            <div class="content-card">
+                                <h3 class="card-title"><a href="whitepapers/web3_informational_singularity_stack.html">Web3 Technology Stack</a></h3>
+                                <div class="card-meta">Whitepaper • 80 pages • Advanced</div>
+                                <p class="card-description">Comprehensive technical implementation guide for the Reality Protocol web3 infrastructure and informational-singularity methodology.</p>
+                                <div class="card-tags">
+                                    <span class="tag">web3</span>
+                                    <span class="tag">blockchain</span>
+                                    <span class="tag">implementation</span>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section id="community" class="content-section">
+                        <h2 class="section-title">Community & Collaboration</h2>
+                        <p>The Reality Protocol is developed through open collaboration with researchers, developers, and consciousness explorers worldwide. The project welcomes contributions across multiple domains including mathematics, computer science, physics, philosophy, and consciousness studies.</p>
+                        
+                        <p><strong>Ways to contribute:</strong></p>
+                        <ul>
+                            <li><strong>Research collaboration</strong> - Join academic research networks and contribute to peer-reviewed publications</li>
+                            <li><strong>Development</strong> - Contribute to core protocol development, SDK, and applications</li>
+                            <li><strong>Documentation</strong> - Improve explanations, add examples, translate content</li>
+                            <li><strong>Community building</strong> - Organize events, create educational content, mentor newcomers</li>
+                        </ul>
+
+                        <p>See the comprehensive <a href="reality_protocol/community/contributing.html">Contributing Guide</a> for detailed information about joining the community.</p>
+                    </section>
+
+                    <section id="references" class="content-section">
+                        <h2 class="section-title">References</h2>
+                        <ol>
+                            <li>Reality Protocol Foundation. (2025). <em>Infinite Dimensionality and Physical Emergence: A Computational Framework for Understanding Reality</em>. Reality Protocol Research Archive.</li>
+                            <li>Reality Protocol Foundation. (2025). <em>Mathematical Foundations of Infinite-Dimensional Computing</em>. Reality Protocol Research Archive.</li>
+                            <li>Reality Protocol Foundation. (2025). <em>The Reality Protocol: Web3 Infrastructure for Infinite-Dimensional Computing</em>. Reality Protocol Research Archive.</li>
+                        </ol>
+                    </section>
+                </div>
+            </article>
+        </div>
+
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="stats-box">
+                <div class="stats-title">Archive Statistics</div>
+                <div class="stats-grid">
+                    <div class="stat-item">
+                        <span class="stat-number">200+</span>
+                        <span class="stat-label">Pages</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">4</span>
+                        <span class="stat-label">Whitepapers</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">∞</span>
+                        <span class="stat-label">Dimensions</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">1.0</span>
+                        <span class="stat-label">Version</span>
                     </div>
                 </div>
             </div>
-            <button class="nav-toggle" id="nav-toggle">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
-        </div>
-    </nav>
 
-    <!-- Hero Section -->
-    <section id="home" class="hero-section">
-        <div class="hero-background"></div>
-        <div class="hero-content">
-            <h1 class="hero-title">Build Applications That Manipulate Reality Itself</h1>
-            <p class="hero-subtitle">
-                The first web3 platform for infinite-dimensional computing with consciousness-aware features and quantum-secured consensus. Think Ethereum, but for reality itself.
-            </p>
-            
-            <div class="cta-buttons">
-                <a href="reality_protocol/developer/quick_start.html" class="btn btn-primary">
-                    <span>Start Building</span>
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <path d="m9 18 6-6-6-6"/>
-                    </svg>
-                </a>
-                <a href="reality_protocol/README.html" class="btn btn-outline">
-                    <span>Explore Documentation</span>
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/>
-                        <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/>
-                    </svg>
-                </a>
+            <div class="sidebar-section">
+                <h3 class="sidebar-title">📚 Core Documentation</h3>
+                <ul class="sidebar-list">
+                    <li class="sidebar-item">
+                        <a href="whitepapers/infinite_dimensionality_emergence.html" class="sidebar-link">
+                            <span class="sidebar-icon">📄</span>
+                            <div>
+                                <div>Infinite Dimensionality Theory</div>
+                                <div class="sidebar-meta">69 pages • Foundational</div>
+                            </div>
+                        </a>
+                    </li>
+                    <li class="sidebar-item">
+                        <a href="whitepapers/mathematical_foundations_infinite_dimensionality.html" class="sidebar-link">
+                            <span class="sidebar-icon">🔢</span>
+                            <div>
+                                <div>Mathematical Foundations</div>
+                                <div class="sidebar-meta">45 pages • Rigorous proofs</div>
+                            </div>
+                        </a>
+                    </li>
+                    <li class="sidebar-item">
+                        <a href="whitepapers/reality_exposition_infinite_dimensionality.html" class="sidebar-link">
+                            <span class="sidebar-icon">💭</span>
+                            <div>
+                                <div>Reality Exposition</div>
+                                <div class="sidebar-meta">42 pages • Accessible</div>
+                            </div>
+                        </a>
+                    </li>
+                    <li class="sidebar-item">
+                        <a href="whitepapers/web3_informational_singularity_stack.html" class="sidebar-link">
+                            <span class="sidebar-icon">⚙️</span>
+                            <div>
+                                <div>Web3 Technology Stack</div>
+                                <div class="sidebar-meta">80 pages • Implementation</div>
+                            </div>
+                        </a>
+                    </li>
+                </ul>
             </div>
 
-            <!-- Quick Stats -->
-            <div class="hero-stats">
-                <div class="stat-item">
-                    <div class="stat-number" data-target="200">0</div>
-                    <div class="stat-label">Pages of Documentation</div>
-                </div>
-                <div class="stat-item">
-                    <div class="stat-number" data-target="4">0</div>
-                    <div class="stat-label">Major Whitepapers</div>
-                </div>
-                <div class="stat-item">
-                    <div class="stat-number">∞</div>
-                    <div class="stat-label">Dimensional Possibilities</div>
-                </div>
+            <div class="sidebar-section">
+                <h3 class="sidebar-title">🛠️ Developer Resources</h3>
+                <ul class="sidebar-list">
+                    <li class="sidebar-item">
+                        <a href="reality_protocol/developer/quick_start.html" class="sidebar-link">
+                            <span class="sidebar-icon">🚀</span>
+                            <div>
+                                <div>Quick Start Guide</div>
+                                <div class="sidebar-meta">Build your first app</div>
+                            </div>
+                        </a>
+                    </li>
+                    <li class="sidebar-item">
+                        <a href="reality_protocol/technical/api_reference.html" class="sidebar-link">
+                            <span class="sidebar-icon">📋</span>
+                            <div>
+                                <div>API Reference</div>
+                                <div class="sidebar-meta">Complete documentation</div>
+                            </div>
+                        </a>
+                    </li>
+                    <li class="sidebar-item">
+                        <a href="reality_protocol/examples/basic/hello_reality.html" class="sidebar-link">
+                            <span class="sidebar-icon">💡</span>
+                            <div>
+                                <div>Code Examples</div>
+                                <div class="sidebar-meta">Working samples</div>
+                            </div>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="sidebar-section">
+                <h3 class="sidebar-title">🤝 Community</h3>
+                <ul class="sidebar-list">
+                    <li class="sidebar-item">
+                        <a href="reality_protocol/community/contributing.html" class="sidebar-link">
+                            <span class="sidebar-icon">✨</span>
+                            <div>
+                                <div>Contributing Guide</div>
+                                <div class="sidebar-meta">Join the revolution</div>
+                            </div>
+                        </a>
+                    </li>
+                    <li class="sidebar-item">
+                        <a href="https://discord.gg/reality-protocol" class="sidebar-link" target="_blank">
+                            <span class="sidebar-icon">💬</span>
+                            <div>
+                                <div>Discord Community</div>
+                                <div class="sidebar-meta">Real-time chat</div>
+                            </div>
+                        </a>
+                    </li>
+                    <li class="sidebar-item">
+                        <a href="https://github.com/reality-protocol" class="sidebar-link" target="_blank">
+                            <span class="sidebar-icon">⚡</span>
+                            <div>
+                                <div>GitHub Organization</div>
+                                <div class="sidebar-meta">Open source code</div>
+                            </div>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="sidebar-section">
+                <h3 class="sidebar-title">🔍 Quick Access</h3>
+                <ul class="sidebar-list">
+                    <li class="sidebar-item">
+                        <a href="#search" class="sidebar-link" onclick="document.getElementById('global-search').focus()">
+                            <span class="sidebar-icon">🔍</span>
+                            <div>
+                                <div>Search Archive</div>
+                                <div class="sidebar-meta">Find anything instantly</div>
+                            </div>
+                        </a>
+                    </li>
+                    <li class="sidebar-item">
+                        <a href="reality_protocol/SHARING_GUIDE.html" class="sidebar-link">
+                            <span class="sidebar-icon">📤</span>
+                            <div>
+                                <div>Share & Distribute</div>
+                                <div class="sidebar-meta">Spread awareness</div>
+                            </div>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </aside>
+    </main>
+
+    <!-- Footer -->
+    <footer class="main-footer">
+        <div class="footer-container">
+            <div class="footer-section">
+                <h4>Documentation</h4>
+                <ul class="footer-links">
+                    <li><a href="whitepapers/infinite_dimensionality_emergence.html">Core Whitepapers</a></li>
+                    <li><a href="reality_protocol/developer/quick_start.html">Developer Guides</a></li>
+                    <li><a href="reality_protocol/user_guides/getting_started.html">User Tutorials</a></li>
+                    <li><a href="reality_protocol/technical/api_reference.html">API Reference</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-section">
+                <h4>Community</h4>
+                <ul class="footer-links">
+                    <li><a href="reality_protocol/community/contributing.html">Contributing</a></li>
+                    <li><a href="https://discord.gg/reality-protocol">Discord</a></li>
+                    <li><a href="https://github.com/reality-protocol">GitHub</a></li>
+                    <li><a href="https://twitter.com/RealityProtocol">Twitter</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-section">
+                <h4>Research</h4>
+                <ul class="footer-links">
+                    <li><a href="reality_protocol/community/research_collaboration.html">Collaboration</a></li>
+                    <li><a href="mailto:research@reality-protocol.org">Academic Inquiries</a></li>
+                    <li><a href="#">Citations & References</a></li>
+                    <li><a href="#">Publication Guidelines</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-section">
+                <h4>About</h4>
+                <ul class="footer-links">
+                    <li><a href="mailto:info@reality-protocol.org">Contact</a></li>
+                    <li><a href="LICENSE">License (IDOSL)</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="reality_protocol/SHARING_GUIDE.html">Media Kit</a></li>
+                </ul>
             </div>
         </div>
         
-        <!-- Scroll Indicator -->
-        <div class="scroll-indicator">
-            <div class="scroll-arrow">↓</div>
-            <span>Choose Your Path</span>
-        </div>
-    </section>
-
-    <!-- Audience Selection -->
-    <section id="audience-selection" class="section">
-        <div class="container">
-            <div class="section-header">
-                <h2>Choose Your Reality Protocol Journey</h2>
-                <p>Different paths for different consciousness types. Select your approach to infinite-dimensional computing.</p>
-            </div>
-            
-            <div class="audience-selector">
-                <div class="audience-card" data-audience="developers" onclick="navigateToAudience('developers')">
-                    <div class="audience-icon">
-                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <polyline points="16 18 22 12 16 6"/>
-                            <polyline points="8 6 2 12 8 18"/>
-                        </svg>
-                    </div>
-                    <h3>Developers</h3>
-                    <p>Build consciousness-aware applications using infinite-dimensional computing and quantum-secured consensus.</p>
-                    <ul class="feature-list">
-                        <li>Smart Contract Development</li>
-                        <li>Quantum Computing Integration</li>
-                        <li>Consciousness Interface APIs</li>
-                        <li>Reality Creation Tools</li>
-                    </ul>
-                    <div class="audience-cta">
-                        <span>Start Building →</span>
-                    </div>
-                </div>
-
-                <div class="audience-card" data-audience="researchers" onclick="navigateToAudience('researchers')">
-                    <div class="audience-icon">
-                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <path d="M9 11a3 3 0 1 0 6 0a3 3 0 0 0-6 0"/>
-                            <path d="M17.5 17.5L22 22"/>
-                            <circle cx="12" cy="11" r="8"/>
-                        </svg>
-                    </div>
-                    <h3>Researchers</h3>
-                    <p>Study emergence, consciousness, and infinite-dimensional physics using rigorous mathematical frameworks.</p>
-                    <ul class="feature-list">
-                        <li>Mathematical Foundations</li>
-                        <li>Peer-Reviewed Research</li>
-                        <li>Collaboration Networks</li>
-                        <li>Academic Publications</li>
-                    </ul>
-                    <div class="audience-cta">
-                        <span>Explore Research →</span>
-                    </div>
-                </div>
-
-                <div class="audience-card" data-audience="explorers" onclick="navigateToAudience('explorers')">
-                    <div class="audience-icon">
-                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <circle cx="12" cy="12" r="10"/>
-                            <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/>
-                            <path d="M12 17h.01"/>
-                        </svg>
-                    </div>
-                    <h3>Consciousness Explorers</h3>
-                    <p>Expand your consciousness beyond biological limitations and explore infinite-dimensional spaces.</p>
-                    <ul class="feature-list">
-                        <li>Consciousness Enhancement</li>
-                        <li>Infinite-Dimensional Experiences</li>
-                        <li>Community Networks</li>
-                        <li>Personal Development</li>
-                    </ul>
-                    <div class="audience-cta">
-                        <span>Begin Journey →</span>
-                    </div>
-                </div>
-
-                <div class="audience-card" data-audience="investors" onclick="navigateToAudience('investors')">
-                    <div class="audience-icon">
-                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <line x1="12" y1="2" x2="12" y2="6"/>
-                            <line x1="12" y1="18" x2="12" y2="22"/>
-                            <line x1="4.93" y1="4.93" x2="7.76" y2="7.76"/>
-                            <line x1="16.24" y1="16.24" x2="19.07" y2="19.07"/>
-                            <line x1="2" y1="12" x2="6" y2="12"/>
-                            <line x1="18" y1="12" x2="22" y2="12"/>
-                            <line x1="4.93" y1="19.07" x2="7.76" y2="16.24"/>
-                            <line x1="16.24" y1="7.76" x2="19.07" y2="4.93"/>
-                        </svg>
-                    </div>
-                    <h3>Investors & Enterprise</h3>
-                    <p>Revolutionary technology platform creating entirely new markets in consciousness enhancement and reality creation.</p>
-                    <ul class="feature-list">
-                        <li>Market Opportunities</li>
-                        <li>Token Economics</li>
-                        <li>Partnership Programs</li>
-                        <li>Enterprise Solutions</li>
-                    </ul>
-                    <div class="audience-cta">
-                        <span>Explore Opportunities →</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Key Features Overview -->
-    <section id="features" class="section bg-secondary">
-        <div class="container">
-            <div class="section-header">
-                <h2>Revolutionary Technology Stack</h2>
-                <p>Core innovations that make Reality Protocol the first truly infinite-dimensional web3 platform</p>
-            </div>
-            
-            <div class="features-grid">
-                <div class="feature-card">
-                    <div class="feature-icon">∞</div>
-                    <h3>Infinite-Dimensional Computing</h3>
-                    <p>First computational framework operating in infinite-dimensional space with adaptive convergence algorithms.</p>
-                </div>
-                
-                <div class="feature-card">
-                    <div class="feature-icon">🧠</div>
-                    <h3>Consciousness-Aware Technology</h3>
-                    <p>Smart contracts and applications that adapt to individual consciousness patterns and complexity levels.</p>
-                </div>
-                
-                <div class="feature-card">
-                    <div class="feature-icon">⚛️</div>
-                    <h3>Quantum Observer Consensus</h3>
-                    <p>Revolutionary consensus mechanism using quantum entanglement for unbreakable security and consensus.</p>
-                </div>
-                
-                <div class="feature-card">
-                    <div class="feature-icon">🌱</div>
-                    <h3>Emergence Mining</h3>
-                    <p>Mine tokens by solving emergence puzzles, contributing to our understanding of complex systems.</p>
-                </div>
-                
-                <div class="feature-card">
-                    <div class="feature-icon">🎨</div>
-                    <h3>Reality Creation Tools</h3>
-                    <p>Build and customize infinite-dimensional realities with intuitive creation and collaboration tools.</p>
-                </div>
-                
-                <div class="feature-card">
-                    <div class="feature-icon">🔗</div>
-                    <h3>Multi-Token Economy</h3>
-                    <p>REAL, CONS, EMERGE, and INFO tokens creating a comprehensive economic system for reality manipulation.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Quick Access Documentation -->
-    <section id="quick-access" class="section">
-        <div class="container">
-            <div class="section-header">
-                <h2>Quick Access to Documentation</h2>
-                <p>200+ pages of comprehensive documentation across multiple formats and audiences</p>
-            </div>
-            
-            <div class="doc-categories">
-                <div class="doc-category">
-                    <h3>Core Whitepapers</h3>
-                    <div class="doc-links">
-                        <a href="whitepapers/infinite_dimensionality_emergence.html" class="doc-link">
-                            <div class="doc-title">Infinite Dimensionality & Physical Emergence</div>
-                            <div class="doc-meta">69 pages • Core Theory</div>
-                        </a>
-                        <a href="whitepapers/mathematical_foundations_infinite_dimensionality.html" class="doc-link">
-                            <div class="doc-title">Mathematical Foundations</div>
-                            <div class="doc-meta">45 pages • Rigorous Mathematics</div>
-                        </a>
-                        <a href="whitepapers/reality_exposition_infinite_dimensionality.html" class="doc-link">
-                            <div class="doc-title">Reality Exposition</div>
-                            <div class="doc-meta">42 pages • Accessible Overview</div>
-                        </a>
-                        <a href="whitepapers/web3_informational_singularity_stack.html" class="doc-link">
-                            <div class="doc-title">Web3 Technology Stack</div>
-                            <div class="doc-meta">80 pages • Technical Implementation</div>
-                        </a>
-                    </div>
-                </div>
-
-                <div class="doc-category">
-                    <h3>Developer Resources</h3>
-                    <div class="doc-links">
-                        <a href="reality_protocol/developer/quick_start.html" class="doc-link">
-                            <div class="doc-title">Developer Quick Start</div>
-                            <div class="doc-meta">25 pages • Get Building Fast</div>
-                        </a>
-                        <a href="reality_protocol/technical/api_reference.html" class="doc-link">
-                            <div class="doc-title">API Reference</div>
-                            <div class="doc-meta">45 pages • Complete API Docs</div>
-                        </a>
-                        <a href="reality_protocol/examples/basic/hello_reality.html" class="doc-link">
-                            <div class="doc-title">Code Examples</div>
-                            <div class="doc-meta">Multiple Examples • Working Code</div>
-                        </a>
-                    </div>
-                </div>
-
-                <div class="doc-category">
-                    <h3>User Guides</h3>
-                    <div class="doc-links">
-                        <a href="reality_protocol/user_guides/getting_started.html" class="doc-link">
-                            <div class="doc-title">Getting Started Guide</div>
-                            <div class="doc-meta">20 pages • Complete Beginner Guide</div>
-                        </a>
-                        <a href="reality_protocol/user_guides/consciousness_interface.html" class="doc-link">
-                            <div class="doc-title">Consciousness Interface</div>
-                            <div class="doc-meta">Guide • Using Consciousness Features</div>
-                        </a>
-                        <a href="reality_protocol/user_guides/reality_creation.html" class="doc-link">
-                            <div class="doc-title">Reality Creation</div>
-                            <div class="doc-meta">Tutorial • Build Custom Realities</div>
-                        </a>
-                    </div>
-                </div>
-
-                <div class="doc-category">
-                    <h3>Community</h3>
-                    <div class="doc-links">
-                        <a href="reality_protocol/community/contributing.html" class="doc-link">
-                            <div class="doc-title">Contributing Guide</div>
-                            <div class="doc-meta">35 pages • Join the Revolution</div>
-                        </a>
-                        <a href="reality_protocol/SHARING_GUIDE.html" class="doc-link">
-                            <div class="doc-title">Sharing Guide</div>
-                            <div class="doc-meta">Spread the Word • Distribution Resources</div>
-                        </a>
-                        <a href="reality_protocol/community/research_collaboration.html" class="doc-link">
-                            <div class="doc-title">Research Collaboration</div>
-                            <div class="doc-meta">Academic • Research Opportunities</div>
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Search Interface -->
-    <section id="search-section" class="section bg-secondary">
-        <div class="container">
-            <div class="section-header">
-                <h2>Intelligent Documentation Search</h2>
-                <p>AI-powered semantic search across all Reality Protocol documentation</p>
-            </div>
-            
-            <div class="search-interface">
-                <div class="search-box">
-                    <input type="text" id="doc-search" placeholder="Search across 200+ pages of documentation..." class="search-input">
-                    <button class="search-btn" onclick="performSearch()">
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <circle cx="11" cy="11" r="8"/>
-                            <path d="m21 21-4.35-4.35"/>
-                        </svg>
-                    </button>
-                </div>
-                
-                <div class="search-suggestions">
-                    <div class="suggestion-category">
-                        <h4>Popular Searches</h4>
-                        <div class="suggestions">
-                            <button class="suggestion-tag" onclick="searchFor('consciousness authentication')">consciousness authentication</button>
-                            <button class="suggestion-tag" onclick="searchFor('infinite dimensional algorithms')">infinite dimensional algorithms</button>
-                            <button class="suggestion-tag" onclick="searchFor('quantum consensus')">quantum consensus</button>
-                            <button class="suggestion-tag" onclick="searchFor('reality creation')">reality creation</button>
-                            <button class="suggestion-tag" onclick="searchFor('emergence mining')">emergence mining</button>
-                        </div>
-                    </div>
-                </div>
-                
-                <div id="search-results" class="search-results"></div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Community Stats -->
-    <section id="community-stats" class="section">
-        <div class="container">
-            <div class="section-header">
-                <h2>Join the Infinite-Dimensional Revolution</h2>
-                <p>Growing community of developers, researchers, and consciousness explorers</p>
-            </div>
-            
-            <div class="stats-grid">
-                <div class="stat-card">
-                    <div class="stat-number" data-target="10000">0</div>
-                    <div class="stat-label">Target Developers</div>
-                    <div class="stat-sublabel">6 months</div>
-                </div>
-                <div class="stat-card">
-                    <div class="stat-number" data-target="50">0</div>
-                    <div class="stat-label">Academic Citations</div>
-                    <div class="stat-sublabel">6 months</div>
-                </div>
-                <div class="stat-card">
-                    <div class="stat-number" data-target="100000">0</div>
-                    <div class="stat-label">Community Members</div>
-                    <div class="stat-sublabel">1 year</div>
-                </div>
-                <div class="stat-card">
-                    <div class="stat-number" data-target="20">0</div>
-                    <div class="stat-label">Language Translations</div>
-                    <div class="stat-sublabel">6 months</div>
-                </div>
-            </div>
-            
-            <div class="community-links">
-                <a href="https://discord.gg/reality-protocol" class="community-link" target="_blank">
-                    <div class="community-icon">💬</div>
-                    <div class="community-info">
-                        <div class="community-name">Discord Community</div>
-                        <div class="community-desc">Real-time discussions and support</div>
-                    </div>
-                </a>
-                <a href="https://github.com/reality-protocol" class="community-link" target="_blank">
-                    <div class="community-icon">🔧</div>
-                    <div class="community-info">
-                        <div class="community-name">GitHub Repository</div>
-                        <div class="community-desc">Open source development</div>
-                    </div>
-                </a>
-                <a href="https://twitter.com/RealityProtocol" class="community-link" target="_blank">
-                    <div class="community-icon">🐦</div>
-                    <div class="community-info">
-                        <div class="community-name">Twitter Updates</div>
-                        <div class="community-desc">Latest news and announcements</div>
-                    </div>
-                </a>
-                <a href="mailto:info@reality-protocol.org" class="community-link">
-                    <div class="community-icon">📧</div>
-                    <div class="community-info">
-                        <div class="community-name">Direct Contact</div>
-                        <div class="community-desc">Get in touch with the core team</div>
-                    </div>
-                </a>
-            </div>
-        </div>
-    </section>
-
-    <!-- Call to Action -->
-    <section id="final-cta" class="section bg-gradient">
-        <div class="container">
-            <div class="cta-content">
-                <h2>Ready to Build the Future of Reality?</h2>
-                <p>Join thousands of developers, researchers, and consciousness explorers in building humanity's transition to infinite-dimensional existence.</p>
-                
-                <div class="cta-buttons">
-                    <a href="reality_protocol/developer/quick_start.html" class="btn btn-primary btn-large">
-                        <span>Start Building Today</span>
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <path d="m9 18 6-6-6-6"/>
-                        </svg>
-                    </a>
-                    <a href="reality_protocol/README.html" class="btn btn-outline btn-large">
-                        <span>Read Full Documentation</span>
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/>
-                            <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/>
-                        </svg>
-                    </a>
-                </div>
-                
-                <div class="cta-quote">
-                    <blockquote>
-                        "In infinite dimensions, every application becomes a universe, every developer becomes a creator of worlds, and every consciousness becomes a builder of reality itself."
-                    </blockquote>
-                    <cite>— Reality Protocol Foundation</cite>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-section">
-                    <div class="footer-brand">
-                        <img src="/assets/images/reality-protocol-logo.svg" alt="Reality Protocol" width="40" height="40">
-                        <div class="footer-brand-info">
-                            <div class="footer-brand-name">Reality Protocol</div>
-                            <div class="footer-brand-tagline">Build applications that manipulate reality</div>
-                        </div>
-                    </div>
-                    <p class="footer-description">
-                        The first web3 platform for infinite-dimensional computing with consciousness-aware features. Building humanity's transition to infinite-dimensional existence.
-                    </p>
-                </div>
-                
-                <div class="footer-links">
-                    <div class="footer-column">
-                        <h4>Documentation</h4>
-                        <ul>
-                            <li><a href="reality_protocol/developer/quick_start.html">Quick Start</a></li>
-                            <li><a href="reality_protocol/technical/api_reference.html">API Reference</a></li>
-                            <li><a href="reality_protocol/user_guides/getting_started.html">User Guide</a></li>
-                            <li><a href="whitepapers/infinite_dimensionality_emergence.html">Whitepapers</a></li>
-                        </ul>
-                    </div>
-                    
-                    <div class="footer-column">
-                        <h4>Community</h4>
-                        <ul>
-                            <li><a href="reality_protocol/community/contributing.html">Contributing</a></li>
-                            <li><a href="https://discord.gg/reality-protocol" target="_blank">Discord</a></li>
-                            <li><a href="https://github.com/reality-protocol" target="_blank">GitHub</a></li>
-                            <li><a href="reality_protocol/community/events.html">Events</a></li>
-                        </ul>
-                    </div>
-                    
-                    <div class="footer-column">
-                        <h4>Resources</h4>
-                        <ul>
-                            <li><a href="reality_protocol/examples/basic/">Examples</a></li>
-                            <li><a href="reality_protocol/SHARING_GUIDE.html">Sharing Guide</a></li>
-                            <li><a href="reality_protocol/technical/protocol_specs.html">Protocol Specs</a></li>
-                            <li><a href="reality_protocol/community/research_collaboration.html">Research</a></li>
-                        </ul>
-                    </div>
-                    
-                    <div class="footer-column">
-                        <h4>Contact</h4>
-                        <ul>
-                            <li><a href="mailto:info@reality-protocol.org">General Info</a></li>
-                            <li><a href="mailto:dev-support@reality-protocol.org">Developer Support</a></li>
-                            <li><a href="mailto:research@reality-protocol.org">Research Inquiries</a></li>
-                            <li><a href="mailto:partnerships@reality-protocol.org">Partnerships</a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="footer-bottom">
-                <div class="footer-copyright">
-                    <p>&copy; 2025 Reality Protocol Foundation. Licensed under Infinite-Dimensional Open Source License (IDOSL).</p>
-                </div>
-                <div class="footer-social">
-                    <a href="https://twitter.com/RealityProtocol" target="_blank" class="social-link">
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-                            <path d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z"/>
-                        </svg>
-                    </a>
-                    <a href="https://github.com/reality-protocol" target="_blank" class="social-link">
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-                            <path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/>
-                        </svg>
-                    </a>
-                </div>
-            </div>
+        <div style="text-align: center; margin-top: 2rem; padding-top: 2rem; border-top: 1px solid var(--color-border); color: var(--color-text-muted); font-size: 12px;">
+            <p>Reality Protocol Research Archive • Version 1.0 • Last updated January 15, 2025</p>
+            <p>Licensed under the <a href="LICENSE" style="color: var(--color-primary);">Infinite-Dimensional Open Source License (IDOSL)</a></p>
+            <p><em>"In infinite dimensions, every document becomes a universe of knowledge"</em></p>
         </div>
     </footer>
 
-    <!-- Scripts -->
-    <script src="/assets/js/main.js"></script>
-    <script src="/assets/js/search.js"></script>
-    <script src="/assets/js/animations.js"></script>
-    
+    <!-- Enhanced JavaScript -->
     <script>
-        // Core functionality
-        document.addEventListener('DOMContentLoaded', function() {
-            initializeWebsite();
-        });
+        // Enhanced Search Functionality
+        class DocumentSearch {
+            constructor() {
+                this.searchInput = document.getElementById('global-search');
+                this.suggestionsContainer = document.getElementById('search-suggestions');
+                this.searchIndex = this.buildSearchIndex();
+                this.setupEventListeners();
+            }
 
-        function initializeWebsite() {
-            // Hide loading screen
-            setTimeout(() => {
-                document.getElementById('loading').style.display = 'none';
-            }, 500);
+            buildSearchIndex() {
+                return [
+                    {
+                        title: "Infinite Dimensionality & Physical Emergence",
+                        url: "whitepapers/infinite_dimensionality_emergence.html",
+                        type: "Whitepaper",
+                        keywords: ["infinite", "dimensional", "emergence", "theory", "IDET", "physics", "mathematics"],
+                        excerpt: "Core theoretical framework introducing Infinite-Dimensional Emergence Theory (IDET)"
+                    },
+                    {
+                        title: "Mathematical Foundations",
+                        url: "whitepapers/mathematical_foundations_infinite_dimensionality.html",
+                        type: "Whitepaper",
+                        keywords: ["mathematics", "proofs", "theorems", "analysis", "rigorous", "formalism"],
+                        excerpt: "Rigorous mathematical formalism with theorems and proofs"
+                    },
+                    {
+                        title: "Developer Quick Start",
+                        url: "reality_protocol/developer/quick_start.html",
+                        type: "Guide",
+                        keywords: ["developer", "tutorial", "SDK", "programming", "getting started", "API"],
+                        excerpt: "Build consciousness-aware applications with Reality Protocol"
+                    },
+                    {
+                        title: "Reality Exposition",
+                        url: "whitepapers/reality_exposition_infinite_dimensionality.html",
+                        type: "Whitepaper", 
+                        keywords: ["accessible", "explanation", "consciousness", "reality", "philosophy", "beginner"],
+                        excerpt: "Natural language explanation of infinite-dimensional concepts"
+                    },
+                    {
+                        title: "API Reference",
+                        url: "reality_protocol/technical/api_reference.html",
+                        type: "Reference",
+                        keywords: ["API", "reference", "documentation", "functions", "interfaces", "technical"],
+                        excerpt: "Complete API documentation for Reality Protocol interfaces"
+                    },
+                    {
+                        title: "Web3 Technology Stack",
+                        url: "whitepapers/web3_informational_singularity_stack.html",
+                        type: "Whitepaper",
+                        keywords: ["web3", "blockchain", "technology", "implementation", "stack", "infrastructure"],
+                        excerpt: "Technical implementation of the Reality Protocol web3 infrastructure"
+                    }
+                ];
+            }
 
-            // Initialize animations
-            initializeAnimations();
-            
-            // Initialize navigation
-            initializeNavigation();
-            
-            // Initialize search
-            initializeSearch();
-            
-            // Initialize audience detection
-            initializeAudienceDetection();
+            setupEventListeners() {
+                this.searchInput.addEventListener('input', (e) => this.handleSearch(e.target.value));
+                this.searchInput.addEventListener('focus', () => this.showRecentSearches());
+                this.searchInput.addEventListener('blur', () => {
+                    setTimeout(() => this.hideSuggestions(), 200);
+                });
+                
+                // Keyboard navigation
+                this.searchInput.addEventListener('keydown', (e) => {
+                    if (e.key === 'ArrowDown' || e.key === 'ArrowUp' || e.key === 'Enter') {
+                        this.handleKeyboardNavigation(e);
+                    }
+                });
+            }
+
+            handleSearch(query) {
+                if (query.length < 2) {
+                    this.hideSuggestions();
+                    return;
+                }
+
+                const results = this.searchIndex.filter(item => {
+                    const searchText = `${item.title} ${item.keywords.join(' ')} ${item.excerpt}`.toLowerCase();
+                    return searchText.includes(query.toLowerCase());
+                }).slice(0, 5);
+
+                this.displaySuggestions(results, query);
+            }
+
+            displaySuggestions(results, query) {
+                if (results.length === 0) {
+                    this.hideSuggestions();
+                    return;
+                }
+
+                const html = results.map(result => `
+                    <div class="suggestion-item" onclick="window.location.href='${result.url}'">
+                        <div class="suggestion-title">${this.highlightText(result.title, query)}</div>
+                        <div class="suggestion-excerpt">${result.type} • ${this.highlightText(result.excerpt, query)}</div>
+                    </div>
+                `).join('');
+
+                this.suggestionsContainer.innerHTML = html;
+                this.suggestionsContainer.style.display = 'block';
+            }
+
+            highlightText(text, query) {
+                const regex = new RegExp(`(${query})`, 'gi');
+                return text.replace(regex, '<strong>$1</strong>');
+            }
+
+            showRecentSearches() {
+                // Could implement recent searches functionality
+            }
+
+            hideSuggestions() {
+                this.suggestionsContainer.style.display = 'none';
+            }
+
+            handleKeyboardNavigation(e) {
+                const items = this.suggestionsContainer.querySelectorAll('.suggestion-item');
+                if (items.length === 0) return;
+
+                // Implementation for arrow key navigation would go here
+            }
         }
 
-        function initializeAnimations() {
-            // Counter animations
-            const counters = document.querySelectorAll('[data-target]');
+        // Initialize search when DOM is ready
+        document.addEventListener('DOMContentLoaded', () => {
+            new DocumentSearch();
+            
+            // Animate elements on scroll
             const observer = new IntersectionObserver((entries) => {
                 entries.forEach(entry => {
                     if (entry.isIntersecting) {
-                        const counter = entry.target;
-                        const target = parseInt(counter.getAttribute('data-target'));
-                        animateCounter(counter, 0, target, 2000);
-                        observer.unobserve(counter);
+                        entry.target.classList.add('fade-in');
                     }
                 });
             });
-            
-            counters.forEach(counter => observer.observe(counter));
-        }
 
-        function animateCounter(element, start, end, duration) {
-            const range = end - start;
-            let current = start;
-            const increment = range / (duration / 16);
-            
-            const timer = setInterval(() => {
-                current += increment;
-                if (current >= end) {
-                    element.textContent = end.toLocaleString();
-                    clearInterval(timer);
-                } else {
-                    element.textContent = Math.floor(current).toLocaleString();
-                }
-            }, 16);
-        }
-
-        function initializeNavigation() {
-            const navbar = document.getElementById('navbar');
-            const navToggle = document.getElementById('nav-toggle');
-            
-            // Scroll effect
-            let lastScrollY = window.scrollY;
-            window.addEventListener('scroll', () => {
-                const currentScrollY = window.scrollY;
-                
-                if (currentScrollY > 100) {
-                    navbar.classList.add('scrolled');
-                } else {
-                    navbar.classList.remove('scrolled');
-                }
-                
-                // Hide/show navbar on scroll
-                if (currentScrollY > lastScrollY && currentScrollY > 300) {
-                    navbar.classList.add('nav-hidden');
-                } else {
-                    navbar.classList.remove('nav-hidden');
-                }
-                
-                lastScrollY = currentScrollY;
+            document.querySelectorAll('.content-card, .sidebar-section').forEach(el => {
+                observer.observe(el);
             });
 
-            // Mobile menu toggle
-            navToggle?.addEventListener('click', () => {
-                navbar.classList.toggle('nav-open');
-            });
-
-            // Smooth scrolling for anchor links
+            // Smooth scroll for anchor links
             document.querySelectorAll('a[href^="#"]').forEach(anchor => {
                 anchor.addEventListener('click', function (e) {
                     e.preventDefault();
@@ -891,165 +1254,15 @@
                     }
                 });
             });
-        }
-
-        function initializeSearch() {
-            const searchInput = document.getElementById('doc-search');
-            const searchResults = document.getElementById('search-results');
-            
-            // Search functionality
-            let searchTimeout;
-            searchInput?.addEventListener('input', (e) => {
-                clearTimeout(searchTimeout);
-                searchTimeout = setTimeout(() => {
-                    performSearch(e.target.value);
-                }, 300);
-            });
-        }
-
-        function initializeAudienceDetection() {
-            // Detect user behavior patterns for personalization
-            let interactionData = {
-                sections: {},
-                searchTerms: [],
-                timeOnPage: Date.now()
-            };
-
-            // Track section interactions
-            const sections = document.querySelectorAll('.audience-card');
-            sections.forEach(card => {
-                card.addEventListener('mouseenter', () => {
-                    const audience = card.getAttribute('data-audience');
-                    interactionData.sections[audience] = (interactionData.sections[audience] || 0) + 1;
-                });
-            });
-
-            // Store interaction data for personalization
-            window.addEventListener('beforeunload', () => {
-                localStorage.setItem('rp_user_profile', JSON.stringify(interactionData));
-            });
-        }
-
-        function navigateToAudience(audienceType) {
-            // Show loading
-            document.getElementById('loading').style.display = 'flex';
-            
-            // Track audience selection
-            gtag?.('event', 'audience_selection', {
-                audience_type: audienceType
-            });
-
-            // Navigate based on audience
-            const routes = {
-                developers: 'reality_protocol/developer/quick_start.html',
-                researchers: 'whitepapers/mathematical_foundations_infinite_dimensionality.html',
-                explorers: 'whitepapers/reality_exposition_infinite_dimensionality.html',
-                investors: 'whitepapers/web3_informational_singularity_stack.html'
-            };
-
-            setTimeout(() => {
-                window.location.href = routes[audienceType] || 'reality_protocol/README.html';
-            }, 300);
-        }
-
-        function performSearch(query = null) {
-            const searchInput = document.getElementById('doc-search');
-            const searchResults = document.getElementById('search-results');
-            const searchQuery = query || searchInput?.value?.trim();
-            
-            if (!searchQuery || searchQuery.length < 2) {
-                searchResults.innerHTML = '';
-                return;
-            }
-
-            // Show loading
-            searchResults.innerHTML = '<div class="search-loading">Searching across documentation...</div>';
-
-            // Simulate search results (in real implementation, this would be actual search)
-            setTimeout(() => {
-                const results = getSearchResults(searchQuery);
-                displaySearchResults(results);
-            }, 500);
-        }
-
-        function searchFor(term) {
-            document.getElementById('doc-search').value = term;
-            performSearch(term);
-        }
-
-        function getSearchResults(query) {
-            // Mock search results - in real implementation, this would use a search engine
-            const mockResults = [
-                {
-                    title: "Consciousness Authentication",
-                    url: "reality_protocol/user_guides/consciousness_interface.html",
-                    excerpt: "Learn how to authenticate your consciousness and access infinite-dimensional features...",
-                    category: "User Guide"
-                },
-                {
-                    title: "Infinite-Dimensional Algorithms",
-                    url: "whitepapers/mathematical_foundations_infinite_dimensionality.html",
-                    excerpt: "Mathematical foundations for computation in infinite-dimensional spaces...",
-                    category: "Whitepaper"
-                },
-                {
-                    title: "Quantum Observer Consensus",
-                    url: "reality_protocol/technical/consensus_mechanisms.html",
-                    excerpt: "Revolutionary consensus mechanism using quantum entanglement...",
-                    category: "Technical Docs"
-                }
-            ];
-
-            return mockResults.filter(result => 
-                result.title.toLowerCase().includes(query.toLowerCase()) ||
-                result.excerpt.toLowerCase().includes(query.toLowerCase())
-            );
-        }
-
-        function displaySearchResults(results) {
-            const searchResults = document.getElementById('search-results');
-            
-            if (results.length === 0) {
-                searchResults.innerHTML = '<div class="search-no-results">No results found. Try different keywords.</div>';
-                return;
-            }
-
-            const resultsHTML = results.map(result => `
-                <div class="search-result">
-                    <div class="search-result-header">
-                        <a href="${result.url}" class="search-result-title">${result.title}</a>
-                        <span class="search-result-category">${result.category}</span>
-                    </div>
-                    <p class="search-result-excerpt">${result.excerpt}</p>
-                    <div class="search-result-url">${result.url}</div>
-                </div>
-            `).join('');
-
-            searchResults.innerHTML = `
-                <div class="search-results-header">
-                    <h4>Found ${results.length} result${results.length !== 1 ? 's' : ''}</h4>
-                </div>
-                ${resultsHTML}
-            `;
-        }
-
-        // Keyboard shortcuts
-        document.addEventListener('keydown', (e) => {
-            // Ctrl/Cmd + K for search
-            if ((e.ctrlKey || e.metaKey) && e.key === 'k') {
-                e.preventDefault();
-                document.getElementById('doc-search')?.focus();
-            }
         });
-    </script>
 
-    <!-- Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-        gtag('config', 'GA_MEASUREMENT_ID');
+        // Analytics and user behavior tracking
+        if (typeof gtag !== 'undefined') {
+            gtag('config', 'GA_MEASUREMENT_ID', {
+                page_title: 'Reality Protocol Research Archive',
+                page_location: window.location.href
+            });
+        }
     </script>
 </body>
 </html>
