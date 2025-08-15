@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reality Protocol - Documentation Hub</title>
+    <style>
+        :root {
+            --primary: #6366f1;
+            --secondary: #8b5cf6;
+            --accent: #06b6d4;
+            --bg: #ffffff;
+            --bg-alt: #f8fafc;
+            --text: #1e293b;
+            --text-muted: #64748b;
+            --border: #e2e8f0;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+        }
+
+        .container { max-width: 1200px; margin: 0 auto; padding: 2rem; }
+
+        .breadcrumb {
+            background: var(--bg-alt);
+            padding: 1rem;
+            border-radius: 0.5rem;
+            margin-bottom: 2rem;
+            font-size: 0.9rem;
+        }
+
+        .breadcrumb a { color: var(--primary); text-decoration: none; }
+
+        .header {
+            text-align: center;
+            margin-bottom: 3rem;
+            padding: 2rem;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            border-radius: 1rem;
+            color: white;
+        }
+
+        .sections-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+        }
+
+        .section-card {
+            background: var(--bg-alt);
+            padding: 2rem;
+            border-radius: 1rem;
+            border: 1px solid var(--border);
+            transition: transform 0.3s ease;
+        }
+
+        .section-card:hover { transform: translateY(-4px); }
+
+        .section-header {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .section-icon {
+            font-size: 2rem;
+            background: var(--primary);
+            color: white;
+            width: 3rem;
+            height: 3rem;
+            border-radius: 0.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .section-title {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--text);
+        }
+
+        .section-description {
+            margin-bottom: 1.5rem;
+            color: var(--text-muted);
+        }
+
+        .file-list {
+            list-style: none;
+        }
+
+        .file-item {
+            margin-bottom: 0.75rem;
+        }
+
+        .file-link {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            padding: 0.75rem;
+            text-decoration: none;
+            color: var(--text);
+            background: var(--bg);
+            border-radius: 0.5rem;
+            border: 1px solid var(--border);
+            transition: all 0.2s ease;
+        }
+
+        .file-link:hover {
+            background: var(--primary);
+            color: white;
+            transform: translateX(0.25rem);
+        }
+
+        .file-icon { font-size: 1.2rem; min-width: 1.5rem; }
+        .file-meta { margin-left: auto; font-size: 0.85rem; opacity: 0.7; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="breadcrumb">
+            <a href="../index.html">Home</a> → 
+            <a href="../navigation.html">Navigation</a> → 
+            <strong>Reality Protocol</strong>
+        </div>
+
+        <header class="header">
+            <h1>⚡ Reality Protocol Documentation</h1>
+            <p>Complete implementation guides, API references, and community resources</p>
+        </header>
+
+        <div class="sections-grid">
+            <!-- Developer Resources -->
+            <section class="section-card">
+                <div class="section-header">
+                    <div class="section-icon">🛠️</div>
+                    <div class="section-title">Developer</div>
+                </div>
+                <p class="section-description">
+                    Essential resources for building applications with Reality Protocol
+                </p>
+                <ul class="file-list">
+                    <li class="file-item">
+                        <a href="developer/" class="file-link">
+                            <span class="file-icon">📁</span>
+                            <span>Developer Directory</span>
+                            <span class="file-meta">Folder</span>
+                        </a>
+                    </li>
+                    <li class="file-item">
+                        <a href="developer/quick_start.html" class="file-link">
+                            <span class="file-icon">🚀</span>
+                            <span>Quick Start Guide</span>
+                            <span class="file-meta">HTML</span>
+                        </a>
+                    </li>
+                    <li class="file-item">
+                        <a href="developer/quick_start.md" class="file-link">
+                            <span class="file-icon">📝</span>
+                            <span>Quick Start (Markdown)</span>
+                            <span class="file-meta">MD</span>
+                        </a>
+                    </li>
+                </ul>
+            </section>
+
+            <!-- Technical Documentation -->
+            <section class="section-card">
+                <div class="section-header">
+                    <div class="section-icon">📋</div>
+                    <div class="section-title">Technical</div>
+                </div>
+                <p class="section-description">
+                    API references, technical specifications, and implementation details
+                </p>
+                <ul class="file-list">
+                    <li class="file-item">
+                        <a href="technical/" class="file-link">
+                            <span class="file-icon">📁</span>
+                            <span>Technical Directory</span>
+                            <span class="file-meta">Folder</span>
+                        </a>
+                    </li>
+                    <li class="file-item">
+                        <a href="technical/api_reference.html" class="file-link">
+                            <span class="file-icon">⚙️</span>
+                            <span>API Reference</span>
+                            <span class="file-meta">HTML</span>
+                        </a>
+                    </li>
+                    <li class="file-item">
+                        <a href="technical/api_reference.md" class="file-link">
+                            <span class="file-icon">📝</span>
+                            <span>API Reference (Markdown)</span>
+                            <span class="file-meta">MD</span>
+                        </a>
+                    </li>
+                </ul>
+            </section>
+
+            <!-- User Guides -->
+            <section class="section-card">
+                <div class="section-header">
+                    <div class="section-icon">📖</div>
+                    <div class="section-title">User Guides</div>
+                </div>
+                <p class="section-description">
+                    Step-by-step tutorials and guides for users
+                </p>
+                <ul class="file-list">
+                    <li class="file-item">
+                        <a href="user_guides/" class="file-link">
+                            <span class="file-icon">📁</span>
+                            <span>User Guides Directory</span>
+                            <span class="file-meta">Folder</span>
+                        </a>
+                    </li>
+                    <li class="file-item">
+                        <a href="user_guides/getting_started.md" class="file-link">
+                            <span class="file-icon">🌱</span>
+                            <span>Getting Started</span>
+                            <span class="file-meta">MD</span>
+                        </a>
+                    </li>
+                </ul>
+            </section>
+
+            <!-- Community -->
+            <section class="section-card">
+                <div class="section-header">
+                    <div class="section-icon">🤝</div>
+                    <div class="section-title">Community</div>
+                </div>
+                <p class="section-description">
+                    Community guidelines, contributing information, and collaboration resources
+                </p>
+                <ul class="file-list">
+                    <li class="file-item">
+                        <a href="community/" class="file-link">
+                            <span class="file-icon">📁</span>
+                            <span>Community Directory</span>
+                            <span class="file-meta">Folder</span>
+                        </a>
+                    </li>
+                    <li class="file-item">
+                        <a href="community/contributing.html" class="file-link">
+                            <span class="file-icon">✨</span>
+                            <span>Contributing Guide</span>
+                            <span class="file-meta">HTML</span>
+                        </a>
+                    </li>
+                    <li class="file-item">
+                        <a href="community/contributing.md" class="file-link">
+                            <span class="file-icon">📝</span>
+                            <span>Contributing (Markdown)</span>
+                            <span class="file-meta">MD</span>
+                        </a>
+                    </li>
+                    <li class="file-item">
+                        <a href="community/research_collaboration.md" class="file-link">
+                            <span class="file-icon">🔬</span>
+                            <span>Research Collaboration</span>
+                            <span class="file-meta">MD</span>
+                        </a>
+                    </li>
+                </ul>
+            </section>
+
+            <!-- Examples -->
+            <section class="section-card">
+                <div class="section-header">
+                    <div class="section-icon">💡</div>
+                    <div class="section-title">Examples</div>
+                </div>
+                <p class="section-description">
+                    Working code examples and sample implementations
+                </p>
+                <ul class="file-list">
+                    <li class="file-item">
+                        <a href="examples/" class="file-link">
+                            <span class="file-icon">📁</span>
+                            <span>Examples Directory</span>
+                            <span class="file-meta">Folder</span>
+                        </a>
+                    </li>
+                    <li class="file-item">
+                        <a href="examples/basic/" class="file-link">
+                            <span class="file-icon">📁</span>
+                            <span>Basic Examples</span>
+                            <span class="file-meta">Folder</span>
+                        </a>
+                    </li>
+                    <li class="file-item">
+                        <a href="examples/basic/hello_reality.js" class="file-link">
+                            <span class="file-icon">💻</span>
+                            <span>Hello Reality</span>
+                            <span class="file-meta">JS</span>
+                        </a>
+                    </li>
+                </ul>
+            </section>
+
+            <!-- Project Meta -->
+            <section class="section-card">
+                <div class="section-header">
+                    <div class="section-icon">📄</div>
+                    <div class="section-title">Project Info</div>
+                </div>
+                <p class="section-description">
+                    Project metadata, distribution guides, and sharing information
+                </p>
+                <ul class="file-list">
+                    <li class="file-item">
+                        <a href="README.md" class="file-link">
+                            <span class="file-icon">📖</span>
+                            <span>Project README</span>
+                            <span class="file-meta">MD</span>
+                        </a>
+                    </li>
+                    <li class="file-item">
+                        <a href="DISTRIBUTION_README.md" class="file-link">
+                            <span class="file-icon">📦</span>
+                            <span>Distribution Guide</span>
+                            <span class="file-meta">MD</span>
+                        </a>
+                    </li>
+                    <li class="file-item">
+                        <a href="SHARING_GUIDE.md" class="file-link">
+                            <span class="file-icon">📤</span>
+                            <span>Sharing Guide</span>
+                            <span class="file-meta">MD</span>
+                        </a>
+                    </li>
+                </ul>
+            </section>
+        </div>
+    </div>
+</body>
+</html>

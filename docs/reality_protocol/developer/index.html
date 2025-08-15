@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Developer Resources - Reality Protocol</title>
+    <style>
+        :root {
+            --primary: #6366f1;
+            --secondary: #8b5cf6;
+            --bg: #ffffff;
+            --bg-alt: #f8fafc;
+            --text: #1e293b;
+            --text-muted: #64748b;
+            --border: #e2e8f0;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; }
+        .container { max-width: 900px; margin: 0 auto; padding: 2rem; }
+
+        .breadcrumb { background: var(--bg-alt); padding: 1rem; border-radius: 0.5rem; margin-bottom: 2rem; font-size: 0.9rem; }
+        .breadcrumb a { color: var(--primary); text-decoration: none; }
+
+        .header { text-align: center; margin-bottom: 3rem; padding: 2rem; background: linear-gradient(135deg, var(--primary), var(--secondary)); border-radius: 1rem; color: white; }
+
+        .resources-grid { display: grid; gap: 1.5rem; }
+
+        .resource-card { background: var(--bg-alt); padding: 2rem; border-radius: 1rem; border: 1px solid var(--border); transition: transform 0.3s ease; }
+        .resource-card:hover { transform: translateY(-4px); }
+
+        .resource-title { font-size: 1.3rem; font-weight: 600; margin-bottom: 1rem; color: var(--primary); }
+        .resource-meta { display: flex; gap: 1rem; margin-bottom: 1rem; font-size: 0.9rem; color: var(--text-muted); }
+        .resource-description { margin-bottom: 1.5rem; line-height: 1.7; }
+
+        .btn { padding: 0.75rem 1.5rem; text-decoration: none; border-radius: 0.5rem; font-weight: 500; transition: all 0.2s ease; display: inline-block; }
+        .btn-primary { background: var(--primary); color: white; }
+        .btn:hover { transform: translateY(-1px); }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="breadcrumb">
+            <a href="../../index.html">Home</a> → 
+            <a href="../../navigation.html">Navigation</a> → 
+            <a href="../index.html">Reality Protocol</a> → 
+            <strong>Developer</strong>
+        </div>
+
+        <header class="header">
+            <h1>🛠️ Developer Resources</h1>
+            <p>Everything you need to build with Reality Protocol</p>
+        </header>
+
+        <div class="resources-grid">
+            <article class="resource-card">
+                <h2 class="resource-title">Quick Start Guide</h2>
+                <div class="resource-meta">
+                    <span>📄 25 pages</span>
+                    <span>🏷️ Essential</span>
+                    <span>⏱️ 30 min read</span>
+                </div>
+                <p class="resource-description">
+                    Comprehensive guide to building consciousness-aware applications using the Reality Protocol SDK 
+                    and development tools. Get up and running with your first infinite-dimensional application in minutes.
+                </p>
+                <a href="quick_start.html" class="btn btn-primary">Start Building →</a>
+            </article>
+
+            <article class="resource-card">
+                <h2 class="resource-title">SDK Documentation</h2>
+                <div class="resource-meta">
+                    <span>📚 Coming Soon</span>
+                    <span>🏷️ Reference</span>
+                </div>
+                <p class="resource-description">
+                    Detailed SDK documentation with code examples, API references, and best practices 
+                    for Reality Protocol development.
+                </p>
+                <a href="#" class="btn btn-primary">View Docs →</a>
+            </article>
+
+            <article class="resource-card">
+                <h2 class="resource-title">Development Environment</h2>
+                <div class="resource-meta">
+                    <span>⚙️ Setup Guide</span>
+                    <span>🏷️ Essential</span>
+                </div>
+                <p class="resource-description">
+                    Step-by-step instructions for setting up your development environment, 
+                    installing dependencies, and configuring your IDE for Reality Protocol development.
+                </p>
+                <a href="#" class="btn btn-primary">Setup Guide →</a>
+            </article>
+        </div>
+    </div>
+</body>
+</html>

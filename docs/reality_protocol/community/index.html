@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Community - Reality Protocol</title>
+    <style>
+        :root {
+            --primary: #6366f1;
+            --secondary: #8b5cf6;
+            --bg: #ffffff;
+            --bg-alt: #f8fafc;
+            --text: #1e293b;
+            --text-muted: #64748b;
+            --border: #e2e8f0;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; }
+        .container { max-width: 900px; margin: 0 auto; padding: 2rem; }
+
+        .breadcrumb { background: var(--bg-alt); padding: 1rem; border-radius: 0.5rem; margin-bottom: 2rem; font-size: 0.9rem; }
+        .breadcrumb a { color: var(--primary); text-decoration: none; }
+
+        .header { text-align: center; margin-bottom: 3rem; padding: 2rem; background: linear-gradient(135deg, var(--primary), var(--secondary)); border-radius: 1rem; color: white; }
+
+        .community-grid { display: grid; gap: 1.5rem; }
+
+        .community-card { background: var(--bg-alt); padding: 2rem; border-radius: 1rem; border: 1px solid var(--border); transition: transform 0.3s ease; }
+        .community-card:hover { transform: translateY(-4px); }
+
+        .card-title { font-size: 1.3rem; font-weight: 600; margin-bottom: 1rem; color: var(--primary); }
+        .card-meta { display: flex; gap: 1rem; margin-bottom: 1rem; font-size: 0.9rem; color: var(--text-muted); }
+        .card-description { margin-bottom: 1.5rem; line-height: 1.7; }
+
+        .btn { padding: 0.75rem 1.5rem; text-decoration: none; border-radius: 0.5rem; font-weight: 500; transition: all 0.2s ease; display: inline-block; }
+        .btn-primary { background: var(--primary); color: white; }
+        .btn:hover { transform: translateY(-1px); }
+
+        .social-links { display: flex; gap: 1rem; margin-top: 2rem; flex-wrap: wrap; }
+        .social-link { padding: 0.5rem 1rem; background: var(--bg); border: 1px solid var(--border); border-radius: 0.5rem; text-decoration: none; color: var(--text); transition: all 0.2s ease; }
+        .social-link:hover { background: var(--primary); color: white; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="breadcrumb">
+            <a href="../../index.html">Home</a> → 
+            <a href="../../navigation.html">Navigation</a> → 
+            <a href="../index.html">Reality Protocol</a> → 
+            <strong>Community</strong>
+        </div>
+
+        <header class="header">
+            <h1>🤝 Community Hub</h1>
+            <p>Join the Reality Protocol community and shape the future</p>
+        </header>
+
+        <div class="community-grid">
+            <article class="community-card">
+                <h2 class="card-title">Contributing Guide</h2>
+                <div class="card-meta">
+                    <span>📝 Essential</span>
+                    <span>🏷️ Guidelines</span>
+                </div>
+                <p class="card-description">
+                    Complete guide for contributing to Reality Protocol development, research, and documentation. 
+                    Learn how to submit code, propose features, and collaborate with the global community.
+                </p>
+                <a href="contributing.html" class="btn btn-primary">Start Contributing →</a>
+            </article>
+
+            <article class="community-card">
+                <h2 class="card-title">Research Collaboration</h2>
+                <div class="card-meta">
+                    <span>🔬 Academic</span>
+                    <span>🏷️ Research</span>
+                </div>
+                <p class="card-description">
+                    Join academic research networks and contribute to peer-reviewed publications in 
+                    infinite-dimensional computing, consciousness studies, and quantum computing.
+                </p>
+                <a href="research_collaboration.md" class="btn btn-primary">Join Research →</a>
+            </article>
+
+            <article class="community-card">
+                <h2 class="card-title">Community Guidelines</h2>
+                <div class="card-meta">
+                    <span>📋 Policies</span>
+                    <span>🏷️ Conduct</span>
+                </div>
+                <p class="card-description">
+                    Our community guidelines ensure a welcoming, inclusive environment for all participants. 
+                    Read about our values, expectations, and code of conduct.
+                </p>
+                <a href="#" class="btn btn-primary">Read Guidelines →</a>
+            </article>
+
+            <article class="community-card">
+                <h2 class="card-title">Events & Meetups</h2>
+                <div class="card-meta">
+                    <span>📅 Events</span>
+                    <span>🏷️ Networking</span>
+                </div>
+                <p class="card-description">
+                    Connect with other Reality Protocol enthusiasts at virtual and in-person events. 
+                    Join study groups, workshops, and conferences worldwide.
+                </p>
+                <a href="#" class="btn btn-primary">View Events →</a>
+            </article>
+        </div>
+
+        <div class="social-links">
+            <a href="https://discord.gg/reality-protocol" class="social-link">💬 Discord</a>
+            <a href="https://github.com/reality-protocol" class="social-link">⚡ GitHub</a>
+            <a href="https://twitter.com/RealityProtocol" class="social-link">🐦 Twitter</a>
+            <a href="mailto:community@reality-protocol.org" class="social-link">📧 Email</a>
+        </div>
+    </div>
+</body>
+</html>
