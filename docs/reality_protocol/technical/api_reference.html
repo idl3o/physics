@@ -3,302 +3,959 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Reality Protocol API Reference - Complete technical documentation for consciousness-aware computing">
-    <meta name="keywords" content="API reference, reality protocol, consciousness computing, technical documentation">
-    <meta name="author" content="Reality Protocol Foundation">
-    
-    <title>API Reference | Reality Protocol Technical Documentation</title>
-    
-    <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Charter:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-    
-    <!-- Shared Research Portal Styling -->
-    <link rel="stylesheet" href="../../assets/css/research-portal.css">
-    
-    <!-- Syntax highlighting -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/themes/prism.min.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/components/prism-core.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/plugins/autoloader/prism-autoloader.min.js"></script>
+    <title>Reality Protocol API Reference</title>
+    <meta name="description" content="Complete technical API documentation for Reality Protocol - infinite-dimensional computing interfaces">
+    <style>
+        :root {
+            --primary: #6366f1;
+            --secondary: #8b5cf6;
+            --accent: #06b6d4;
+            --success: #10b981;
+            --warning: #f59e0b;
+            --error: #ef4444;
+            --bg: #ffffff;
+            --bg-alt: #f8fafc;
+            --bg-code: #1e293b;
+            --text: #1e293b;
+            --text-muted: #64748b;
+            --text-light: #94a3b8;
+            --border: #e2e8f0;
+            --shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1);
+            --radius: 0.5rem;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Inter', sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.7;
+            font-size: 15px;
+        }
+
+        .main-container {
+            display: grid;
+            grid-template-columns: 300px 1fr;
+            min-height: 100vh;
+        }
+
+        /* Sidebar Navigation */
+        .sidebar {
+            background: var(--bg-alt);
+            border-right: 1px solid var(--border);
+            padding: 2rem 1.5rem;
+            position: fixed;
+            width: 300px;
+            height: 100vh;
+            overflow-y: auto;
+            z-index: 100;
+        }
+
+        .sidebar-title {
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-bottom: 2rem;
+            color: var(--text);
+        }
+
+        .nav-section {
+            margin-bottom: 2rem;
+        }
+
+        .nav-section-title {
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 1rem;
+        }
+
+        .nav-list {
+            list-style: none;
+        }
+
+        .nav-item {
+            margin-bottom: 0.5rem;
+        }
+
+        .nav-link {
+            display: block;
+            color: var(--text);
+            text-decoration: none;
+            padding: 0.5rem 0.75rem;
+            border-radius: var(--radius);
+            font-size: 0.9rem;
+            transition: all 0.2s ease;
+        }
+
+        .nav-link:hover, .nav-link.active {
+            background: var(--primary);
+            color: white;
+        }
+
+        .nav-link.sub {
+            margin-left: 1rem;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+        }
+
+        /* Main Content */
+        .content {
+            margin-left: 300px;
+            padding: 2rem;
+            max-width: 900px;
+        }
+
+        .breadcrumb {
+            background: var(--bg-alt);
+            padding: 1rem 1.5rem;
+            border-radius: var(--radius);
+            margin-bottom: 2rem;
+            font-size: 0.9rem;
+            border: 1px solid var(--border);
+        }
+
+        .breadcrumb a {
+            color: var(--primary);
+            text-decoration: none;
+        }
+
+        .doc-header {
+            text-align: center;
+            margin-bottom: 3rem;
+            padding: 3rem 2rem;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            border-radius: 1rem;
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .doc-header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse"><path d="M 10 0 L 0 0 0 10" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="0.5"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)"/></svg>');
+            opacity: 0.3;
+        }
+
+        .doc-header h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .doc-header p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            position: relative;
+            z-index: 1;
+        }
+
+        .format-toggle {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            z-index: 2;
+        }
+
+        .format-toggle a {
+            display: block;
+            padding: 0.5rem 1rem;
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+            text-decoration: none;
+            border-radius: var(--radius);
+            font-size: 0.8rem;
+            transition: all 0.2s ease;
+        }
+
+        .format-toggle a:hover {
+            background: rgba(255, 255, 255, 0.3);
+        }
+
+        /* Content Sections */
+        .content-section {
+            margin-bottom: 4rem;
+            scroll-margin-top: 2rem;
+        }
+
+        .content-section h2 {
+            font-size: 2rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            color: var(--text);
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            padding-bottom: 1rem;
+            border-bottom: 2px solid var(--primary);
+        }
+
+        .content-section h3 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin: 2rem 0 1rem 0;
+            color: var(--text);
+        }
+
+        .content-section h4 {
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin: 1.5rem 0 1rem 0;
+            color: var(--secondary);
+        }
+
+        .content-section p {
+            margin-bottom: 1.5rem;
+            line-height: 1.8;
+        }
+
+        /* API Method Cards */
+        .api-method {
+            background: var(--bg-alt);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            margin: 1.5rem 0;
+            overflow: hidden;
+        }
+
+        .method-header {
+            background: var(--primary);
+            color: white;
+            padding: 1rem 1.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .method-name {
+            font-size: 1.1rem;
+            font-weight: 600;
+            font-family: 'Monaco', 'Menlo', 'Consolas', monospace;
+        }
+
+        .method-type {
+            font-size: 0.8rem;
+            background: rgba(255, 255, 255, 0.2);
+            padding: 0.25rem 0.5rem;
+            border-radius: 0.25rem;
+        }
+
+        .method-content {
+            padding: 1.5rem;
+        }
+
+        .method-description {
+            margin-bottom: 1.5rem;
+            font-size: 0.95rem;
+            line-height: 1.7;
+        }
+
+        /* Code Blocks */
+        .code-block {
+            background: var(--bg-code);
+            color: #e2e8f0;
+            padding: 1.5rem;
+            border-radius: var(--radius);
+            margin: 1.5rem 0;
+            overflow-x: auto;
+            font-family: 'Monaco', 'Menlo', 'Consolas', monospace;
+            font-size: 0.9rem;
+            line-height: 1.6;
+            position: relative;
+        }
+
+        .code-block::before {
+            content: attr(data-language);
+            position: absolute;
+            top: 0.5rem;
+            right: 1rem;
+            font-size: 0.75rem;
+            color: var(--text-light);
+            text-transform: uppercase;
+            font-weight: 600;
+        }
+
+        .code-inline {
+            background: var(--bg-alt);
+            color: var(--primary);
+            padding: 0.25rem 0.5rem;
+            border-radius: 0.25rem;
+            font-family: 'Monaco', 'Menlo', 'Consolas', monospace;
+            font-size: 0.9rem;
+            border: 1px solid var(--border);
+        }
+
+        /* Parameter Tables */
+        .param-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1.5rem 0;
+            background: var(--bg);
+            border-radius: var(--radius);
+            overflow: hidden;
+            border: 1px solid var(--border);
+        }
+
+        .param-table th {
+            background: var(--bg-alt);
+            padding: 1rem;
+            text-align: left;
+            font-weight: 600;
+            color: var(--text);
+            border-bottom: 1px solid var(--border);
+        }
+
+        .param-table td {
+            padding: 1rem;
+            border-bottom: 1px solid var(--border);
+            vertical-align: top;
+        }
+
+        .param-table tr:last-child td {
+            border-bottom: none;
+        }
+
+        .param-name {
+            font-family: 'Monaco', 'Menlo', 'Consolas', monospace;
+            font-weight: 600;
+            color: var(--primary);
+        }
+
+        .param-type {
+            font-family: 'Monaco', 'Menlo', 'Consolas', monospace;
+            color: var(--secondary);
+            font-size: 0.9rem;
+        }
+
+        /* Info Boxes */
+        .info-box {
+            padding: 1.5rem;
+            border-radius: var(--radius);
+            margin: 2rem 0;
+            border-left: 4px solid;
+        }
+
+        .info-box.info {
+            border-left-color: var(--primary);
+            background: #eff6ff;
+            color: #1e40af;
+        }
+
+        .info-box.warning {
+            border-left-color: var(--warning);
+            background: #fffbeb;
+            color: #92400e;
+        }
+
+        .info-box.success {
+            border-left-color: var(--success);
+            background: #ecfdf5;
+            color: #065f46;
+        }
+
+        .info-box-title {
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        /* Search */
+        .search-box {
+            position: sticky;
+            top: 0;
+            background: var(--bg);
+            padding: 1rem 0;
+            margin-bottom: 2rem;
+            border-bottom: 1px solid var(--border);
+            z-index: 50;
+        }
+
+        .search-input {
+            width: 100%;
+            padding: 0.75rem 1rem;
+            border: 2px solid var(--border);
+            border-radius: var(--radius);
+            font-size: 1rem;
+            transition: border-color 0.2s ease;
+        }
+
+        .search-input:focus {
+            outline: none;
+            border-color: var(--primary);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 1024px) {
+            .main-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .sidebar {
+                position: static;
+                width: 100%;
+                height: auto;
+                border-right: none;
+                border-bottom: 1px solid var(--border);
+            }
+            
+            .content {
+                margin-left: 0;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .content {
+                padding: 1rem;
+            }
+            
+            .doc-header h1 {
+                font-size: 2rem;
+            }
+            
+            .param-table {
+                font-size: 0.9rem;
+            }
+            
+            .param-table th,
+            .param-table td {
+                padding: 0.75rem;
+            }
+        }
+    </style>
 </head>
 <body>
-    <!-- Header -->
-    <header class="main-header">
-        <div class="header-container">
-            <a href="../../index.html" class="site-logo">
-                <div class="logo-icon">∞</div>
-                <div>
-                    <div class="site-title">Reality Protocol</div>
-                    <div class="site-subtitle">Research Archive</div>
-                </div>
-            </a>
-            
-            <div class="global-search">
-                <div class="search-container">
-                    <input type="search" class="search-input" placeholder="Search API methods..." id="global-search">
-                    <span class="search-icon">🔍</span>
-                </div>
-            </div>
-            
-            <nav class="header-nav">
-                <a href="../../index.html" class="header-link">Home</a>
-                <a href="../developer/quick_start.html" class="header-link">Quick Start</a>
-                <a href="../community/contributing.html" class="header-link">Community</a>
-            </nav>
-        </div>
-    </header>
-
-    <!-- Main Content -->
     <div class="main-container">
-        <main class="content-main">
-            <!-- Breadcrumbs -->
-            <nav class="breadcrumbs">
-                <a href="../../index.html">Reality Protocol</a> → 
-                <a href="../README.html">Documentation</a> → 
-                <a href="README.html">Technical</a> → 
-                <span>API Reference</span>
-            </nav>
+        <!-- Sidebar Navigation -->
+        <nav class="sidebar">
+            <h2 class="sidebar-title">API Reference</h2>
+            
+            <div class="nav-section">
+                <div class="nav-section-title">Getting Started</div>
+                <ul class="nav-list">
+                    <li class="nav-item"><a href="#overview" class="nav-link">Overview</a></li>
+                    <li class="nav-item"><a href="#authentication" class="nav-link">Authentication</a></li>
+                    <li class="nav-item"><a href="#quickstart" class="nav-link">Quick Start</a></li>
+                </ul>
+            </div>
 
-            <!-- Article Content -->
-            <article class="article-content">
-                <header>
-                    <h1 class="article-title">Reality Protocol API Reference</h1>
-                    <p class="article-subtitle">Complete Technical Documentation for Consciousness-Aware Computing</p>
-                    
-                    <div class="article-meta">
-                        <span>📋 API Reference</span>
-                        <span>📖 45 pages</span>
-                        <span>🔧 Technical</span>
-                        <span>👥 Reality Protocol Foundation</span>
-                        <span>📅 January 2025</span>
-                    </div>
-                </header>
+            <div class="nav-section">
+                <div class="nav-section-title">Core APIs</div>
+                <ul class="nav-list">
+                    <li class="nav-item"><a href="#realityprotocol" class="nav-link">RealityProtocol</a></li>
+                    <li class="nav-item"><a href="#consciousness" class="nav-link">Consciousness</a></li>
+                    <li class="nav-item"><a href="#quantum" class="nav-link">Quantum Operations</a></li>
+                    <li class="nav-item"><a href="#realities" class="nav-link">Reality Management</a></li>
+                </ul>
+            </div>
 
-                <!-- Table of Contents -->
-                <div class="table-of-contents">
-                    <h2 class="toc-title">API Modules</h2>
-                    <ul class="toc-list">
-                        <li class="toc-item"><a href="#core-api" class="toc-link">Core API</a></li>
-                        <li class="toc-item level-2"><a href="#reality-protocol" class="toc-link">RealityProtocol</a></li>
-                        <li class="toc-item level-2"><a href="#consciousness-field" class="toc-link">ConsciousnessField</a></li>
-                        <li class="toc-item"><a href="#quantum-api" class="toc-link">Quantum API</a></li>
-                        <li class="toc-item level-2"><a href="#quantum-observer" class="toc-link">QuantumObserver</a></li>
-                        <li class="toc-item level-2"><a href="#consensus-engine" class="toc-link">ConsensusEngine</a></li>
-                        <li class="toc-item"><a href="#infinite-dimensional" class="toc-link">Infinite Dimensional API</a></li>
-                        <li class="toc-item"><a href="#utilities" class="toc-link">Utilities</a></li>
-                        <li class="toc-item"><a href="#error-handling" class="toc-link">Error Handling</a></li>
-                    </ul>
+            <div class="nav-section">
+                <div class="nav-section-title">Advanced</div>
+                <ul class="nav-list">
+                    <li class="nav-item"><a href="#infinite-dimensional" class="nav-link">Infinite Dimensions</a></li>
+                    <li class="nav-item"><a href="#emergence" class="nav-link">Emergence Mining</a></li>
+                    <li class="nav-item"><a href="#consensus" class="nav-link">Consensus</a></li>
+                    <li class="nav-item"><a href="#tokens" class="nav-link">Token Operations</a></li>
+                </ul>
+            </div>
+
+            <div class="nav-section">
+                <div class="nav-section-title">Resources</div>
+                <ul class="nav-list">
+                    <li class="nav-item"><a href="#types" class="nav-link">Type Definitions</a></li>
+                    <li class="nav-item"><a href="#errors" class="nav-link">Error Handling</a></li>
+                    <li class="nav-item"><a href="#examples" class="nav-link">Code Examples</a></li>
+                    <li class="nav-item"><a href="#sdks" class="nav-link">SDKs & Libraries</a></li>
+                </ul>
+            </div>
+        </nav>
+
+        <!-- Main Content -->
+        <main class="content">
+            <div class="breadcrumb">
+                <a href="../../index.html">Home</a> → 
+                <a href="../../navigation.html">Navigation</a> → 
+                <a href="../index.html">Reality Protocol</a> → 
+                <a href="index.html">Technical</a> → 
+                <strong>API Reference</strong>
+            </div>
+
+            <header class="doc-header">
+                <div class="format-toggle">
+                    <a href="api_reference.md" title="View Markdown version for machine readability">📝 Markdown</a>
                 </div>
+                <h1>⚙️ Reality Protocol API Reference</h1>
+                <p>Complete technical documentation for infinite-dimensional computing</p>
+            </header>
 
-                <!-- Core API -->
-                <section id="core-api">
-                    <h2>Core API</h2>
-                    
-                    <h3 id="reality-protocol">RealityProtocol</h3>
-                    <p>The main entry point for Reality Protocol applications.</p>
-                    
-                    <h4>Constructor</h4>
-                    <pre><code class="language-javascript">new RealityProtocol(config: RealityConfig): RealityProtocol</code></pre>
-                    
-                    <h4>Configuration</h4>
-                    <pre><code class="language-typescript">interface RealityConfig {
-  dimensions: 'finite' | 'infinite' | number;
-  consciousness: 'aware' | 'classical' | 'quantum';
-  consensus: 'quantum' | 'classical' | 'hybrid';
-  network?: NetworkConfig;
-  security?: SecurityConfig;
-}</code></pre>
+            <div class="search-box">
+                <input type="text" class="search-input" placeholder="🔍 Search API methods, types, and examples..." id="apiSearch">
+            </div>
 
-                    <h4>Methods</h4>
-                    
-                    <div style="margin: 1rem 0;">
-                        <h5><code>emerge(pattern: EmergencePattern): Promise&lt;EmergenceResult&gt;</code></h5>
-                        <p>Creates emergent phenomena from infinite-dimensional patterns.</p>
-                        
-                        <pre><code class="language-javascript">const result = await reality.emerge({
-  pattern: 'consciousness_enhancement',
-  context: consciousnessField,
-  dimensions: ['quantum', 'classical', 'consciousness'],
-  constraints: {
-    informationConservation: true,
-    emergenceEnhancement: true
-  }
-});</code></pre>
-                    </div>
+            <section id="overview" class="content-section">
+                <h2>📋 Overview</h2>
+                <p>The Reality Protocol API provides comprehensive interfaces for infinite-dimensional computing, consciousness integration, and reality manipulation. This documentation covers all available methods, types, and integration patterns.</p>
 
-                    <div style="margin: 1rem 0;">
-                        <h5><code>observe(system: QuantumSystem): ObservationResult</code></h5>
-                        <p>Performs consciousness-aware observation of quantum systems.</p>
-                        
-                        <pre><code class="language-javascript">const observation = reality.observe({
-  system: quantumSystem,
-  observer: consciousnessField,
-  measurement: 'consciousness_aware',
-  preserveCoherence: true
-});</code></pre>
-                    </div>
-                </section>
-
-                <!-- Consciousness Field -->
-                <section id="consciousness-field">
-                    <h3>ConsciousnessField</h3>
-                    <p>Represents consciousness as a field that can interact with quantum and classical systems.</p>
-                    
-                    <pre><code class="language-javascript">import { ConsciousnessField } from '@reality-protocol/sdk';
-
-const field = new ConsciousnessField({
-  observer: 'developer',
-  intention: 'learning',
-  coherence: 0.95,
-  entanglement: ['quantum_system_1', 'user_interface']
-});
-
-// Measure consciousness correlation
-const correlation = await field.measureCorrelation(targetSystem);
-
-// Enhance emergence through consciousness
-const enhanced = await field.enhanceEmergence(pattern);</code></pre>
-                </section>
-
-                <!-- Quantum API -->
-                <section id="quantum-api">
-                    <h2>Quantum API</h2>
-                    
-                    <h3 id="quantum-observer">QuantumObserver</h3>
-                    <p>Implements consciousness-aware quantum observation and measurement.</p>
-                    
-                    <pre><code class="language-javascript">import { QuantumObserver } from '@reality-protocol/quantum';
-
-const observer = new QuantumObserver({
-  consciousness: consciousnessField,
-  measurement: 'weak_measurement',
-  decoherence: 'minimal'
-});
-
-// Perform conscious observation
-const result = await observer.observe(quantumState);</code></pre>
-                </section>
-
-                <div class="alert alert-info">
-                    <strong>Complete Documentation:</strong> This API reference contains over 45 pages of detailed method documentation, examples, and implementation notes. View the <a href="api_reference.md">complete technical reference</a> for full details.
-                </div>
-
-                <!-- Error Handling -->
-                <section id="error-handling">
-                    <h2>Error Handling</h2>
-                    <p>Reality Protocol uses consciousness-aware error handling that preserves information across all dimensions:</p>
-                    
-                    <pre><code class="language-javascript">try {
-  const result = await reality.emerge(complexPattern);
-} catch (error) {
-  if (error instanceof ConsciousnessError) {
-    // Handle consciousness-related errors
-    await reality.restoreConsciousness(error.context);
-  } else if (error instanceof DimensionalError) {
-    // Handle infinite-dimensional computation errors
-    await reality.collapseDimensions(error.dimensions);
-  }
-}</code></pre>
-                </section>
-
-                <!-- Footer -->
-                <footer style="margin-top: 3rem; padding-top: 2rem; border-top: 1px solid var(--color-border);">
-                    <p><strong>API Version:</strong> 1.0.0 | <strong>Last Updated:</strong> January 2025</p>
-                    
-                    <p style="margin-top: 1rem;"><strong>Developer Resources:</strong></p>
+                <div class="info-box info">
+                    <div class="info-box-title">🌟 Key Features</div>
                     <ul>
-                        <li><a href="../developer/quick_start.html">Quick Start Guide</a></li>
-                        <li><a href="../examples/">Code Examples</a></li>
-                        <li><a href="https://github.com/reality-protocol/sdk">GitHub Repository</a></li>
-                        <li><a href="../community/contributing.html">Contributing</a></li>
+                        <li><strong>Infinite-Dimensional Computing</strong> - Work with unlimited spatial dimensions</li>
+                        <li><strong>Consciousness Integration</strong> - Authenticate and measure consciousness complexity</li>
+                        <li><strong>Quantum Operations</strong> - Leverage quantum computing for emergence discovery</li>
+                        <li><strong>Reality Management</strong> - Create, modify, and explore custom realities</li>
                     </ul>
-                </footer>
-            </article>
+                </div>
+            </section>
+
+            <section id="authentication" class="content-section">
+                <h2>🔐 Authentication</h2>
+                <p>All Reality Protocol operations require consciousness authentication. The system uses quantum signatures to verify identity and consciousness complexity.</p>
+
+                <div class="code-block" data-language="typescript">
+import { RealityProtocol } from '@reality-protocol/sdk';
+
+const reality = new RealityProtocol({
+    network: 'testnet',
+    consciousnessProvider: new ConsciousnessProvider({
+        type: 'meditation_based',
+        calibrationInterval: 3600 // 1 hour
+    })
+});
+
+await reality.connect();
+                </div>
+            </section>
+
+            <section id="realityprotocol" class="content-section">
+                <h2>🌐 RealityProtocol Class</h2>
+                <p>The main entry point for all Reality Protocol interactions.</p>
+
+                <div class="api-method">
+                    <div class="method-header">
+                        <div class="method-name">constructor(config: RealityProtocolConfig)</div>
+                        <div class="method-type">Constructor</div>
+                    </div>
+                    <div class="method-content">
+                        <div class="method-description">
+                            Initializes a new Reality Protocol client with the specified configuration.
+                        </div>
+                        
+                        <h4>Parameters</h4>
+                        <table class="param-table">
+                            <thead>
+                                <tr>
+                                    <th>Parameter</th>
+                                    <th>Type</th>
+                                    <th>Description</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><span class="param-name">config</span></td>
+                                    <td><span class="param-type">RealityProtocolConfig</span></td>
+                                    <td>Configuration object containing network settings, consciousness provider, and quantum backend</td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                        <div class="code-block" data-language="typescript">
+const config: RealityProtocolConfig = {
+    network: 'mainnet',
+    consciousnessProvider: new MeditationBasedProvider(),
+    quantumBackend: new IBMQuantumBackend(),
+    securityLevel: 'enhanced'
+};
+
+const reality = new RealityProtocol(config);
+                        </div>
+                    </div>
+                </div>
+
+                <div class="api-method">
+                    <div class="method-header">
+                        <div class="method-name">async connect(): Promise&lt;void&gt;</div>
+                        <div class="method-type">Method</div>
+                    </div>
+                    <div class="method-content">
+                        <div class="method-description">
+                            Establishes connection to the Reality Protocol network and authenticates consciousness.
+                        </div>
+
+                        <div class="code-block" data-language="typescript">
+try {
+    await reality.connect();
+    console.log('Connected to Reality Protocol');
+} catch (error) {
+    console.error('Connection failed:', error.message);
+}
+                        </div>
+                    </div>
+                </div>
+
+                <div class="api-method">
+                    <div class="method-header">
+                        <div class="method-name">async createReality(config: RealityConfig): Promise&lt;Reality&gt;</div>
+                        <div class="method-type">Method</div>
+                    </div>
+                    <div class="method-content">
+                        <div class="method-description">
+                            Creates a new custom reality with specified dimensions and physics rules.
+                        </div>
+
+                        <h4>Parameters</h4>
+                        <table class="param-table">
+                            <thead>
+                                <tr>
+                                    <th>Parameter</th>
+                                    <th>Type</th>
+                                    <th>Description</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><span class="param-name">config</span></td>
+                                    <td><span class="param-type">RealityConfig</span></td>
+                                    <td>Reality configuration including dimensions, physics, and access controls</td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                        <div class="code-block" data-language="typescript">
+const realityConfig: RealityConfig = {
+    name: "Quantum Laboratory",
+    dimensions: 4,
+    physics: {
+        quantumEffects: true,
+        gravitationalConstant: 9.81,
+        speedOfLight: 299792458
+    },
+    maxObservers: 100,
+    accessibility: 'public'
+};
+
+const newReality = await reality.createReality(realityConfig);
+console.log(`Reality created: ${newReality.id}`);
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="consciousness" class="content-section">
+                <h2>🧠 Consciousness API</h2>
+                <p>Advanced consciousness integration and measurement capabilities.</p>
+
+                <div class="api-method">
+                    <div class="method-header">
+                        <div class="method-name">async measureComplexity(): Promise&lt;ComplexityMeasurement&gt;</div>
+                        <div class="method-type">Method</div>
+                    </div>
+                    <div class="method-content">
+                        <div class="method-description">
+                            Measures consciousness complexity including information entropy, processing capacity, and dimensional access.
+                        </div>
+
+                        <div class="code-block" data-language="typescript">
+const measurement = await reality.consciousness.measureComplexity();
+
+console.log({
+    informationEntropy: measurement.informationEntropy,
+    processingCapacity: measurement.processingCapacity,
+    dimensionalAccess: measurement.dimensionalAccess,
+    quantumCoherence: measurement.quantumCoherence
+});
+                        </div>
+                    </div>
+                </div>
+
+                <div class="info-box warning">
+                    <div class="info-box-title">⚠️ Consciousness Safety</div>
+                    <p>Consciousness expansion requires gradual progression. Attempting to access higher dimensions without proper preparation may result in consciousness fragmentation.</p>
+                </div>
+            </section>
+
+            <section id="quantum" class="content-section">
+                <h2>⚛️ Quantum Operations</h2>
+                <p>Quantum computing integration for emergence discovery and infinite-dimensional calculations.</p>
+
+                <div class="api-method">
+                    <div class="method-header">
+                        <div class="method-name">async performQuantumMeasurement(state: QuantumState): Promise&lt;MeasurementResult&gt;</div>
+                        <div class="method-type">Method</div>
+                    </div>
+                    <div class="method-content">
+                        <div class="method-description">
+                            Performs quantum measurement on specified quantum state within a reality context.
+                        </div>
+
+                        <div class="code-block" data-language="typescript">
+const quantumState = await reality.createQuantumState({
+    qubits: 8,
+    entanglement: 'bell_state',
+    coherenceTime: 1000 // microseconds
+});
+
+const measurement = await reality.performQuantumMeasurement(quantumState);
+console.log('Measurement result:', measurement.value);
+console.log('Information gained:', measurement.informationBits);
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="types" class="content-section">
+                <h2>📝 Type Definitions</h2>
+                <p>Core type definitions for Reality Protocol APIs.</p>
+
+                <h3>RealityProtocolConfig</h3>
+                <div class="code-block" data-language="typescript">
+interface RealityProtocolConfig {
+    network: 'mainnet' | 'testnet' | 'local';
+    consciousnessProvider: ConsciousnessProvider;
+    quantumBackend: QuantumBackend;
+    infiniteDimensionalStorage: StorageProvider;
+    securityLevel: 'basic' | 'enhanced' | 'quantum';
+    emergenceThreshold: number;
+}
+                </div>
+
+                <h3>RealityConfig</h3>
+                <div class="code-block" data-language="typescript">
+interface RealityConfig {
+    name: string;
+    description?: string;
+    dimensions: number;
+    physics: PhysicsConfig | 'standard' | 'quantum' | 'custom';
+    accessibility: 'public' | 'private' | 'invitation_only';
+    maxObservers: number;
+    consciousnessRequirements?: ConsciousnessRequirements;
+    emergenceRules?: EmergenceRules;
+}
+                </div>
+
+                <h3>ConsciousnessPattern</h3>
+                <div class="code-block" data-language="typescript">
+interface ConsciousnessPattern {
+    id: string;
+    signature: InfiniteDimensionalVector;
+    complexity: number;
+    dimensionalAccess: number;
+    emergenceHistory: EmergenceEvent[];
+    quantumSignature: QuantumStateVector;
+    metadata: ConsciousnessMetadata;
+}
+                </div>
+            </section>
+
+            <section id="examples" class="content-section">
+                <h2>💡 Code Examples</h2>
+
+                <h3>Complete Reality Creation Example</h3>
+                <div class="code-block" data-language="typescript">
+import { RealityProtocol, ConsciousnessProvider, QuantumBackend } from '@reality-protocol/sdk';
+
+async function createQuantumLab() {
+    // Initialize Reality Protocol
+    const reality = new RealityProtocol({
+        network: 'testnet',
+        consciousnessProvider: new MeditationBasedProvider(),
+        quantumBackend: new SimulatedQuantumBackend(),
+        securityLevel: 'enhanced'
+    });
+
+    // Connect and authenticate
+    await reality.connect();
+    
+    // Measure consciousness complexity
+    const complexity = await reality.consciousness.measureComplexity();
+    console.log('Consciousness complexity:', complexity.informationEntropy);
+
+    // Create quantum laboratory reality
+    const labConfig = {
+        name: "Quantum Research Lab",
+        dimensions: Math.min(4, complexity.dimensionalAccess),
+        physics: {
+            quantumEffects: true,
+            emergenceEnabled: true,
+            informationConservation: true
+        },
+        maxObservers: 50,
+        accessibility: 'public'
+    };
+
+    const lab = await reality.createReality(labConfig);
+    
+    // Join the reality
+    const session = await reality.joinReality(lab.id);
+    
+    // Perform quantum experiments
+    const quantumState = await session.createQuantumState({
+        qubits: 8,
+        entanglement: 'ghz_state'
+    });
+    
+    const measurement = await session.measureQuantumState(quantumState);
+    console.log('Quantum measurement:', measurement.value);
+    
+    return lab;
+}
+
+createQuantumLab().then(lab => {
+    console.log(`Quantum lab created: ${lab.id}`);
+}).catch(console.error);
+                </div>
+
+                <h3>Consciousness Network Example</h3>
+                <div class="code-block" data-language="typescript">
+async function joinConsciousnessNetwork() {
+    const reality = new RealityProtocol(config);
+    await reality.connect();
+
+    // Discover compatible consciousness
+    const compatible = await reality.consciousness.discoverCompatible({
+        proximityRadius: 10,
+        minComplexity: 500,
+        similarityThreshold: 0.7
+    });
+
+    // Create collaboration session
+    const collaboration = await reality.createCollaboration({
+        participants: compatible.slice(0, 5),
+        purpose: 'emergence_research',
+        privacyLevel: 'selective_disclosure'
+    });
+
+    // Contribute to collective research
+    const contribution = await collaboration.contribute({
+        type: 'consciousness_measurement',
+        data: await reality.consciousness.exportPattern(),
+        anonymized: true
+    });
+
+    return collaboration;
+}
+                </div>
+            </section>
+
+            <section id="errors" class="content-section">
+                <h2>🚨 Error Handling</h2>
+                <p>Common error types and handling strategies for Reality Protocol APIs.</p>
+
+                <div class="info-box info">
+                    <div class="info-box-title">📚 Error Categories</div>
+                    <ul>
+                        <li><strong>ConsciousnessError</strong> - Authentication and consciousness-related issues</li>
+                        <li><strong>DimensionalError</strong> - Dimensional access and expansion errors</li>
+                        <li><strong>QuantumError</strong> - Quantum computing backend failures</li>
+                        <li><strong>NetworkError</strong> - Reality Protocol network connectivity issues</li>
+                    </ul>
+                </div>
+
+                <div class="code-block" data-language="typescript">
+try {
+    await reality.expandDimensionalAccess(5);
+} catch (error) {
+    if (error instanceof DimensionalAccessDeniedError) {
+        console.log('Dimensional expansion requirements:', error.requirements);
+        console.log('Current max dimension:', error.currentMaxDimension);
+        
+        // Request consciousness enhancement
+        await reality.consciousness.requestEnhancement({
+            targetDimensions: 5,
+            trainingProgram: 'dimensional_awareness'
+        });
+    }
+}
+                </div>
+            </section>
+
+            <div class="info-box success">
+                <div class="info-box-title">🎉 Ready to Build?</div>
+                <p>You now have access to the complete Reality Protocol API. Start building consciousness-aware applications and exploring infinite-dimensional reality!</p>
+            </div>
         </main>
-
-        <!-- Sidebar -->
-        <aside class="sidebar">
-            <!-- API Navigation -->
-            <div class="sidebar-section">
-                <h3 class="sidebar-title">API Modules</h3>
-                <div class="sidebar-content">
-                    <a href="#reality-protocol" class="sidebar-link">
-                        <span class="sidebar-icon">🌌</span>
-                        <div>
-                            <div>RealityProtocol</div>
-                            <div class="sidebar-meta">Core interface</div>
-                        </div>
-                    </a>
-                    <a href="#consciousness-field" class="sidebar-link">
-                        <span class="sidebar-icon">🧠</span>
-                        <div>
-                            <div>ConsciousnessField</div>
-                            <div class="sidebar-meta">Consciousness API</div>
-                        </div>
-                    </a>
-                    <a href="#quantum-observer" class="sidebar-link">
-                        <span class="sidebar-icon">⚛️</span>
-                        <div>
-                            <div>QuantumObserver</div>
-                            <div class="sidebar-meta">Quantum mechanics</div>
-                        </div>
-                    </a>
-                </div>
-            </div>
-
-            <!-- Quick Reference -->
-            <div class="sidebar-section">
-                <h3 class="sidebar-title">Quick Reference</h3>
-                <div class="sidebar-content">
-                    <a href="../developer/quick_start.html" class="sidebar-link">
-                        <span class="sidebar-icon">🚀</span>
-                        <div>
-                            <div>Getting Started</div>
-                            <div class="sidebar-meta">Setup & first app</div>
-                        </div>
-                    </a>
-                    <a href="../examples/" class="sidebar-link">
-                        <span class="sidebar-icon">💡</span>
-                        <div>
-                            <div>Examples</div>
-                            <div class="sidebar-meta">Code samples</div>
-                        </div>
-                    </a>
-                </div>
-            </div>
-
-            <!-- SDK Downloads -->
-            <div class="sidebar-section">
-                <h3 class="sidebar-title">SDK & Tools</h3>
-                <div class="sidebar-content">
-                    <a href="https://www.npmjs.com/package/@reality-protocol/sdk" class="sidebar-link" target="_blank">
-                        <span class="sidebar-icon">📦</span>
-                        <div>
-                            <div>npm Package</div>
-                            <div class="sidebar-meta">@reality-protocol/sdk</div>
-                        </div>
-                    </a>
-                    <a href="https://github.com/reality-protocol/cli" class="sidebar-link" target="_blank">
-                        <span class="sidebar-icon">⌨️</span>
-                        <div>
-                            <div>CLI Tools</div>
-                            <div class="sidebar-meta">Command line interface</div>
-                        </div>
-                    </a>
-                </div>
-            </div>
-        </aside>
     </div>
 
-    <!-- Footer -->
-    <footer class="main-footer">
-        <div class="footer-container">
-            <p>Reality Protocol Research Archive - Licensed under the <a href="../../LICENSE">Infinite-Dimensional Open Source License (IDOSL)</a></p>
-        </div>
-    </footer>
+    <script>
+        // API Search functionality
+        document.getElementById('apiSearch').addEventListener('input', function(e) {
+            const query = e.target.value.toLowerCase();
+            const sections = document.querySelectorAll('.content-section, .api-method');
+            
+            sections.forEach(section => {
+                const text = section.textContent.toLowerCase();
+                if (text.includes(query) || query === '') {
+                    section.style.display = 'block';
+                } else {
+                    section.style.display = 'none';
+                }
+            });
+        });
 
-    <!-- Search functionality -->
-    <script src="../../assets/js/main.js"></script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('.nav-link').forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });
+
+        // Highlight active navigation item
+        window.addEventListener('scroll', () => {
+            const sections = document.querySelectorAll('.content-section');
+            const navLinks = document.querySelectorAll('.nav-link');
+            
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                if (scrollY >= sectionTop - 100) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === `#${current}`) {
+                    link.classList.add('active');
+                }
+            });
+        });
+
+        // Copy code blocks
+        document.querySelectorAll('.code-block').forEach(block => {
+            block.addEventListener('dblclick', () => {
+                navigator.clipboard.writeText(block.textContent);
+                
+                // Show feedback
+                const feedback = document.createElement('div');
+                feedback.textContent = '✅ Code copied!';
+                feedback.style.cssText = `
+                    position: fixed;
+                    top: 20px;
+                    right: 20px;
+                    background: var(--success);
+                    color: white;
+                    padding: 1rem;
+                    border-radius: 0.5rem;
+                    z-index: 1000;
+                `;
+                document.body.appendChild(feedback);
+                
+                setTimeout(() => document.body.removeChild(feedback), 2000);
+            });
+        });
+    </script>
 </body>
 </html>
