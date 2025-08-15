@@ -1,6 +1,6 @@
 # Reality Protocol - Complete Documentation Suite
 
-[![Deploy to GitHub Pages](https://github.com/reality-protocol/documentation/workflows/Deploy%20Reality%20Protocol%20Documentation/badge.svg)](https://github.com/reality-protocol/documentation/actions)
+(https://github.com/reality-protocol/documentation/workflows/Deploy%20Reality%20Protocol%20Documentation/badge.svg) (https://github.com/reality-protocol/documentation/actions)
 [![Documentation Status](https://img.shields.io/badge/docs-200%2B%20pages-brightgreen)](https://docs.reality-protocol.org)
 [![License: IDOSL](https://img.shields.io/badge/License-IDOSL%201.0-blue.svg)](LICENSE)
 [![Interactive](https://img.shields.io/badge/Interactive-Visualizations-purple)](https://docs.reality-protocol.org)
