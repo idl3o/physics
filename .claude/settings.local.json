@@ -7,9 +7,25 @@
       "Bash(git add:*)",
       "Bash(bundle install:*)",
       "Bash(python:*)",
-      "Bash(start http://localhost:8000)"
+      "Bash(start http://localhost:8000)",
+      "Bash(git push:*)",
+      "Bash(start https://idl3o.github.io/physics/)",
+      "Bash(gh repo create:*)",
+      "Bash(cp:*)",
+      "Bash(git remote add:*)",
+      "Bash(git checkout:*)",
+      "Bash(gh repo edit:*)",
+      "Bash(start https://github.com/idl3o/reality-protocol-docs)",
+      "Bash(start https://idl3o.github.io/reality-protocol-docs/)",
+      "Bash(mv:*)",
+      "Bash(rm:*)",
+      "Bash(gh repo view:*)",
+      "Bash(tree:*)",
+      "Bash(git commit:*)",
+      "Bash(start http://localhost:8001)"
     ],
     "deny": [],
-    "ask": []
+    "ask": [],
+    "defaultMode": "acceptEdits"
   }
 }
