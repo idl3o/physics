@@ -1,0 +1,855 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dimensional Journey - Complete 0↔N Framework</title>
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --color-0d: #000000;
+            --color-1d: #1a0033;
+            --color-2d: #2d0066;
+            --color-3d: #4000ff;
+            --color-4d: #6633ff;
+            --color-5d: #8866ff;
+            --color-6d: #aa99ff;
+            --color-7d: #ccccff;
+            --color-8d: #e6e6ff;
+            --color-9d: #f5f5ff;
+            --color-10d: #ffffff;
+            --color-infinite: linear-gradient(135deg, #000000, #ffffff);
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: #000;
+            color: #fff;
+            overflow-x: hidden;
+            cursor: default;
+        }
+
+        /* Loading Screen */
+        .loading-screen {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100vh;
+            background: #000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 10000;
+            transition: opacity 1s ease;
+        }
+
+        .loading-content {
+            text-align: center;
+        }
+
+        .infinity-loader {
+            width: 120px;
+            height: 60px;
+            margin: 0 auto 2rem;
+            position: relative;
+        }
+
+        .infinity-loader svg {
+            width: 100%;
+            height: 100%;
+            animation: pulse 2s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 0.3; transform: scale(0.95); }
+            50% { opacity: 1; transform: scale(1); }
+        }
+
+        /* Navigation */
+        .nav-fixed {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            background: rgba(0, 0, 0, 0.9);
+            backdrop-filter: blur(20px);
+            padding: 1rem 2rem;
+            transition: all 0.3s ease;
+            opacity: 0;
+        }
+
+        .nav-visible {
+            opacity: 1;
+        }
+
+        .nav-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .dimension-indicator {
+            font-size: 0.9rem;
+            color: #888;
+            letter-spacing: 0.1em;
+        }
+
+        .dimension-indicator span {
+            color: #fff;
+            font-weight: 600;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: #888;
+            text-decoration: none;
+            transition: color 0.3s ease;
+            font-size: 0.9rem;
+        }
+
+        .nav-links a:hover {
+            color: #fff;
+        }
+
+        /* Scroll Progress */
+        .scroll-progress {
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 3px;
+            background: linear-gradient(90deg, #000, #fff);
+            z-index: 1001;
+            transition: width 0.1s ease;
+        }
+
+        /* Dimensional Sections */
+        .dimension-section {
+            min-height: 100vh;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 4rem 2rem;
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 1s ease;
+        }
+
+        .dimension-section.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .dimension-content {
+            max-width: 1200px;
+            width: 100%;
+            position: relative;
+            z-index: 2;
+        }
+
+        /* 0D - Unity */
+        .dimension-0 {
+            background: radial-gradient(circle at center, rgba(255,255,255,0.1), #000);
+        }
+
+        .unity-visualization {
+            width: 200px;
+            height: 200px;
+            margin: 3rem auto;
+            position: relative;
+        }
+
+        .unity-point {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 10px;
+            height: 10px;
+            background: #fff;
+            border-radius: 50%;
+            transform: translate(-50%, -50%);
+            animation: unity-pulse 3s ease-in-out infinite;
+        }
+
+        @keyframes unity-pulse {
+            0%, 100% { 
+                box-shadow: 0 0 0 0 rgba(255,255,255,0.8),
+                           0 0 0 20px rgba(255,255,255,0.4),
+                           0 0 0 40px rgba(255,255,255,0.2),
+                           0 0 0 60px rgba(255,255,255,0.1);
+            }
+            50% { 
+                box-shadow: 0 0 0 30px rgba(255,255,255,0.4),
+                           0 0 0 60px rgba(255,255,255,0.2),
+                           0 0 0 90px rgba(255,255,255,0.1),
+                           0 0 0 120px rgba(255,255,255,0.05);
+            }
+        }
+
+        /* 1-3D Physical */
+        .dimension-1-3 {
+            background: linear-gradient(180deg, #000 0%, #001133 50%, #002266 100%);
+        }
+
+        .physical-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .physical-card {
+            background: rgba(255,255,255,0.05);
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 1rem;
+            padding: 2rem;
+            backdrop-filter: blur(10px);
+            transform: perspective(1000px) rotateX(0deg);
+            transition: all 0.3s ease;
+        }
+
+        .physical-card:hover {
+            background: rgba(255,255,255,0.08);
+            transform: perspective(1000px) rotateX(-5deg) translateY(-10px);
+        }
+
+        /* 4-6D Temporal */
+        .dimension-4-6 {
+            background: linear-gradient(180deg, #002266 0%, #4000ff 50%, #6633ff 100%);
+        }
+
+        .timeline-container {
+            position: relative;
+            padding: 3rem 0;
+        }
+
+        .timeline-line {
+            position: absolute;
+            left: 50%;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: linear-gradient(180deg, transparent, rgba(255,255,255,0.3), transparent);
+        }
+
+        .timeline-event {
+            position: relative;
+            margin: 2rem 0;
+            opacity: 0;
+            transform: translateX(-30px);
+            animation: slide-in 1s ease forwards;
+        }
+
+        .timeline-event:nth-child(even) {
+            text-align: right;
+            transform: translateX(30px);
+        }
+
+        @keyframes slide-in {
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        /* 7-9D Energy */
+        .dimension-7-9 {
+            background: linear-gradient(180deg, #6633ff 0%, #9966ff 50%, #cc99ff 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .energy-field {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            opacity: 0.3;
+        }
+
+        .energy-particle {
+            position: absolute;
+            width: 4px;
+            height: 4px;
+            background: #fff;
+            border-radius: 50%;
+            animation: float-particle 20s infinite linear;
+        }
+
+        @keyframes float-particle {
+            from {
+                transform: translateY(100vh) translateX(0);
+            }
+            to {
+                transform: translateY(-100vh) translateX(100px);
+            }
+        }
+
+        /* 10D Consciousness */
+        .dimension-10 {
+            background: radial-gradient(circle at center, rgba(255,255,255,0.2), rgba(255,255,255,0.05));
+            min-height: 100vh;
+        }
+
+        .consciousness-web {
+            position: relative;
+            width: 600px;
+            height: 600px;
+            margin: 3rem auto;
+        }
+
+        .consciousness-node {
+            position: absolute;
+            width: 12px;
+            height: 12px;
+            background: #fff;
+            border-radius: 50%;
+            animation: consciousness-pulse 4s ease-in-out infinite;
+        }
+
+        @keyframes consciousness-pulse {
+            0%, 100% { 
+                opacity: 0.3;
+                transform: scale(1);
+            }
+            50% { 
+                opacity: 1;
+                transform: scale(1.5);
+            }
+        }
+
+        /* Infinite Dimensions */
+        .dimension-infinite {
+            background: linear-gradient(180deg, 
+                #000 0%, 
+                #111 10%, 
+                #222 20%, 
+                #333 30%, 
+                #444 40%, 
+                #555 50%, 
+                #666 60%, 
+                #777 70%, 
+                #888 80%, 
+                #999 90%, 
+                #fff 100%);
+            min-height: 200vh;
+        }
+
+        .infinity-spiral {
+            position: sticky;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 400px;
+            height: 400px;
+            margin: 0 auto;
+        }
+
+        .spiral-path {
+            stroke: url(#spiral-gradient);
+            stroke-width: 2;
+            fill: none;
+            stroke-dasharray: 1000;
+            stroke-dashoffset: 1000;
+            animation: draw-spiral 5s ease-in-out forwards;
+        }
+
+        @keyframes draw-spiral {
+            to {
+                stroke-dashoffset: 0;
+            }
+        }
+
+        /* Typography */
+        h1 {
+            font-size: clamp(2rem, 8vw, 5rem);
+            font-weight: 100;
+            letter-spacing: 0.05em;
+            margin-bottom: 1rem;
+            opacity: 0;
+            animation: fade-up 1s ease forwards 0.3s;
+        }
+
+        h2 {
+            font-size: clamp(1.5rem, 4vw, 2.5rem);
+            font-weight: 300;
+            margin-bottom: 1rem;
+            color: rgba(255,255,255,0.9);
+        }
+
+        .dimension-subtitle {
+            font-size: 1.2rem;
+            color: rgba(255,255,255,0.6);
+            margin-bottom: 2rem;
+            opacity: 0;
+            animation: fade-up 1s ease forwards 0.5s;
+        }
+
+        .dimension-text {
+            font-size: 1rem;
+            line-height: 1.8;
+            color: rgba(255,255,255,0.8);
+            max-width: 800px;
+            margin: 0 auto;
+            opacity: 0;
+            animation: fade-up 1s ease forwards 0.7s;
+        }
+
+        @keyframes fade-up {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Interactive Elements */
+        .explore-btn {
+            display: inline-block;
+            margin-top: 2rem;
+            padding: 1rem 2rem;
+            background: rgba(255,255,255,0.1);
+            border: 1px solid rgba(255,255,255,0.3);
+            color: #fff;
+            text-decoration: none;
+            border-radius: 50px;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+        }
+
+        .explore-btn:hover {
+            background: rgba(255,255,255,0.2);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(255,255,255,0.1);
+        }
+
+        /* Scroll Indicator */
+        .scroll-indicator {
+            position: absolute;
+            bottom: 2rem;
+            left: 50%;
+            transform: translateX(-50%);
+            animation: bounce 2s ease-in-out infinite;
+        }
+
+        @keyframes bounce {
+            0%, 100% { transform: translateX(-50%) translateY(0); }
+            50% { transform: translateX(-50%) translateY(10px); }
+        }
+
+        .scroll-indicator svg {
+            width: 30px;
+            height: 30px;
+            fill: rgba(255,255,255,0.5);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            
+            .consciousness-web {
+                width: 90vw;
+                height: 90vw;
+            }
+            
+            .infinity-spiral {
+                width: 90vw;
+                height: 90vw;
+            }
+        }
+
+        /* Parallax Layers */
+        .parallax-layer {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            pointer-events: none;
+        }
+
+        .stars {
+            background: transparent;
+        }
+
+        .star {
+            position: absolute;
+            width: 2px;
+            height: 2px;
+            background: #fff;
+            border-radius: 50%;
+            animation: twinkle 3s ease-in-out infinite;
+        }
+
+        @keyframes twinkle {
+            0%, 100% { opacity: 0.3; }
+            50% { opacity: 1; }
+        }
+    </style>
+</head>
+<body>
+    <!-- Loading Screen -->
+    <div class="loading-screen" id="loadingScreen">
+        <div class="loading-content">
+            <div class="infinity-loader">
+                <svg viewBox="0 0 120 60">
+                    <path d="M30,30 Q45,15 60,30 T90,30 Q75,45 60,30 T30,30" 
+                          stroke="#fff" stroke-width="2" fill="none"/>
+                </svg>
+            </div>
+            <p style="color: #888; font-size: 0.9rem; letter-spacing: 0.2em;">INITIALIZING DIMENSIONAL JOURNEY</p>
+        </div>
+    </div>
+
+    <!-- Scroll Progress -->
+    <div class="scroll-progress" id="scrollProgress"></div>
+
+    <!-- Navigation -->
+    <nav class="nav-fixed" id="navigation">
+        <div class="nav-content">
+            <div class="dimension-indicator">
+                DIMENSION: <span id="currentDimension">0D</span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#dimension-0">Unity (0D)</a></li>
+                <li><a href="#dimension-1-3">Physical (1-3D)</a></li>
+                <li><a href="#dimension-4-6">Temporal (4-6D)</a></li>
+                <li><a href="#dimension-7-9">Energy (7-9D)</a></li>
+                <li><a href="#dimension-10">Consciousness (10D)</a></li>
+                <li><a href="#dimension-infinite">Infinite (∞D)</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- 0D: Unity -->
+    <section class="dimension-section dimension-0" id="dimension-0">
+        <div class="dimension-content">
+            <h1 style="text-align: center;">The Zeroth Dimension</h1>
+            <p class="dimension-subtitle" style="text-align: center;">Pure Unity • Infinite Potential • Undifferentiated Source</p>
+            
+            <div class="unity-visualization">
+                <div class="unity-point"></div>
+            </div>
+            
+            <div class="dimension-text">
+                <p>In the beginning, there is only Unity. The Zeroth Dimension (0D) represents the source of all existence - a point of infinite potential where all possibilities exist in perfect, undifferentiated harmony. Here, the paradox of infinity and zero merge into one: ∞₀ × 0₀ = 1.</p>
+                
+                <p>This is not emptiness, but rather the fullness of all that could be, waiting to emanate into dimensional complexity. Every journey through the dimensions begins and ends here, in the eternal return to source.</p>
+            </div>
+            
+            <div style="text-align: center; margin-top: 3rem;">
+                <a href="#dimension-1-3" class="explore-btn">Begin Emanation →</a>
+            </div>
+        </div>
+        
+        <div class="scroll-indicator">
+            <svg viewBox="0 0 30 30">
+                <path d="M15,10 L15,20 M10,15 L15,20 L20,15" stroke="currentColor" stroke-width="2" fill="none"/>
+            </svg>
+        </div>
+    </section>
+
+    <!-- 1-3D: Physical Reality -->
+    <section class="dimension-section dimension-1-3" id="dimension-1-3">
+        <div class="dimension-content">
+            <h1>Physical Dimensions</h1>
+            <p class="dimension-subtitle">Matter • Space • Observable Reality</p>
+            
+            <div class="physical-grid">
+                <div class="physical-card">
+                    <h3>1D: The Line</h3>
+                    <p>The first emanation from unity creates distinction - the primal duality of here and there, creating the possibility of movement and measurement.</p>
+                </div>
+                <div class="physical-card">
+                    <h3>2D: The Plane</h3>
+                    <p>Rotation becomes possible. Surfaces emerge. Information can be encoded in patterns, creating the foundation for complex structures.</p>
+                </div>
+                <div class="physical-card">
+                    <h3>3D: Space</h3>
+                    <p>Volume manifests. The physical universe as we perceive it emerges, with matter, energy, and the dance of particles through space.</p>
+                </div>
+            </div>
+            
+            <div class="dimension-text" style="margin-top: 3rem;">
+                <p>The physical dimensions form the foundation of observable reality. Here, the infinite potential of 0D crystallizes into discrete forms - atoms, molecules, planets, stars. Yet even in this apparent solidity, quantum mechanics reveals the underlying unity, where particles exist in superposition until observed.</p>
+            </div>
+        </div>
+        
+        <div class="parallax-layer stars" id="stars1"></div>
+    </section>
+
+    <!-- 4-6D: Temporal Dimensions -->
+    <section class="dimension-section dimension-4-6" id="dimension-4-6">
+        <div class="dimension-content">
+            <h1>Temporal Dimensions</h1>
+            <p class="dimension-subtitle">Time • Causality • Probability</p>
+            
+            <div class="timeline-container">
+                <div class="timeline-line"></div>
+                <div class="timeline-event">
+                    <h3>4D: Linear Time</h3>
+                    <p>The arrow of time emerges, creating past, present, and future. Causality becomes possible.</p>
+                </div>
+                <div class="timeline-event">
+                    <h3>5D: Probability Branches</h3>
+                    <p>Multiple timelines coexist. Every decision creates branching realities in the quantum multiverse.</p>
+                </div>
+                <div class="timeline-event">
+                    <h3>6D: Temporal Navigation</h3>
+                    <p>Movement between timelines becomes possible. The observer can witness all possible histories.</p>
+                </div>
+            </div>
+            
+            <div class="dimension-text">
+                <p>Time is not merely a fourth spatial dimension, but a fundamental aspect of how consciousness experiences reality. In these dimensions, we see that all moments exist simultaneously, and what we call "time" is simply our sequential experience of an eternal now.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 7-9D: Energy Dimensions -->
+    <section class="dimension-section dimension-7-9" id="dimension-7-9">
+        <div class="energy-field" id="energyField"></div>
+        <div class="dimension-content">
+            <h1>Energy Dimensions</h1>
+            <p class="dimension-subtitle">Information • Entanglement • Emergence</p>
+            
+            <div class="dimension-text">
+                <p>Beyond the physical and temporal lies the realm of pure energy and information. Here, the boundaries between separate entities dissolve, revealing the interconnected web of existence.</p>
+                
+                <h3 style="margin-top: 2rem;">7D: Information Energy</h3>
+                <p>All possible configurations of information exist as energetic patterns. Knowledge itself becomes a dimension.</p>
+                
+                <h3 style="margin-top: 2rem;">8D: Entanglement Energy</h3>
+                <p>The connections between all things become visible. Quantum entanglement reveals itself as a fundamental dimensional property.</p>
+                
+                <h3 style="margin-top: 2rem;">9D: Emergence Energy</h3>
+                <p>The creative force that drives complexity from simplicity. The energy of evolution and self-organization.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 10D: Consciousness -->
+    <section class="dimension-section dimension-10" id="dimension-10">
+        <div class="dimension-content">
+            <h1>The Consciousness Dimension</h1>
+            <p class="dimension-subtitle">Awareness • Observer • Bridge to Unity</p>
+            
+            <div class="consciousness-web" id="consciousnessWeb">
+                <!-- Nodes will be generated by JavaScript -->
+            </div>
+            
+            <div class="dimension-text">
+                <p>At the tenth dimension, consciousness reveals itself not as an emergent property of complex matter, but as a fundamental dimension of reality itself. Here, the observer and the observed merge, and the journey back to unity begins.</p>
+                
+                <p>This is where individual awareness connects to universal consciousness, where the boundaries of self dissolve into the greater whole while maintaining distinct perspective - the ultimate paradox of being.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Infinite Dimensions -->
+    <section class="dimension-section dimension-infinite" id="dimension-infinite">
+        <div class="dimension-content">
+            <h1 style="text-align: center;">Infinite Dimensions</h1>
+            <p class="dimension-subtitle" style="text-align: center;">The Return to Unity • N→0 Convergence</p>
+            
+            <div class="infinity-spiral">
+                <svg viewBox="0 0 400 400" style="width: 100%; height: 100%;">
+                    <defs>
+                        <linearGradient id="spiral-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" style="stop-color:#fff;stop-opacity:1" />
+                            <stop offset="100%" style="stop-color:#000;stop-opacity:1" />
+                        </linearGradient>
+                    </defs>
+                    <path class="spiral-path" d="M200,200 Q250,200 250,150 T200,100 Q150,100 150,150 T200,200 Q275,200 275,125 T200,50 Q125,50 125,125 T200,200 Q300,200 300,100 T200,0" />
+                </svg>
+            </div>
+            
+            <div class="dimension-text">
+                <p>As we approach infinite dimensions, a profound transformation occurs. The complexity that emerged from unity through dimensional differentiation begins to converge back toward its source. This is not a regression but a transcendent integration - each dimension adding to the whole while simultaneously revealing the underlying unity.</p>
+                
+                <p>In the infinite-dimensional space, every point contains all other points, every moment encompasses all time, and every consciousness touches the universal awareness. The journey from 0 to ∞ completes its circuit, revealing that the emanation and return were always one movement, one breath of the cosmos.</p>
+                
+                <p>Here, at the intersection of everything and nothing, we find that we never left home. The infinite dimensions collapse back into the unity of 0D, completing the eternal cycle of existence. The observer realizes they are both the journey and the destination, the question and the answer, the seeker and the sought.</p>
+            </div>
+            
+            <div style="text-align: center; margin-top: 4rem;">
+                <a href="#dimension-0" class="explore-btn">Return to Unity ∞</a>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // Initialize after page load
+        window.addEventListener('load', function() {
+            setTimeout(() => {
+                document.getElementById('loadingScreen').style.opacity = '0';
+                setTimeout(() => {
+                    document.getElementById('loadingScreen').style.display = 'none';
+                    document.getElementById('navigation').classList.add('nav-visible');
+                }, 1000);
+            }, 2000);
+        });
+
+        // Intersection Observer for scroll animations
+        const observerOptions = {
+            threshold: 0.2,
+            rootMargin: '0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    
+                    // Update dimension indicator
+                    const dimensionId = entry.target.id;
+                    updateDimensionIndicator(dimensionId);
+                }
+            });
+        }, observerOptions);
+
+        // Observe all dimension sections
+        document.querySelectorAll('.dimension-section').forEach(section => {
+            observer.observe(section);
+        });
+
+        // Update dimension indicator
+        function updateDimensionIndicator(dimensionId) {
+            const indicator = document.getElementById('currentDimension');
+            const dimensionMap = {
+                'dimension-0': '0D - Unity',
+                'dimension-1-3': '1-3D - Physical',
+                'dimension-4-6': '4-6D - Temporal',
+                'dimension-7-9': '7-9D - Energy',
+                'dimension-10': '10D - Consciousness',
+                'dimension-infinite': '∞D - Infinite'
+            };
+            
+            if (indicator && dimensionMap[dimensionId]) {
+                indicator.textContent = dimensionMap[dimensionId];
+            }
+        }
+
+        // Scroll progress bar
+        window.addEventListener('scroll', () => {
+            const scrollTop = window.pageYOffset;
+            const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+            const scrollPercent = (scrollTop / docHeight) * 100;
+            document.getElementById('scrollProgress').style.width = scrollPercent + '%';
+        });
+
+        // Generate stars
+        function generateStars() {
+            const starsContainer = document.getElementById('stars1');
+            if (starsContainer) {
+                for (let i = 0; i < 50; i++) {
+                    const star = document.createElement('div');
+                    star.className = 'star';
+                    star.style.left = Math.random() * 100 + '%';
+                    star.style.top = Math.random() * 100 + '%';
+                    star.style.animationDelay = Math.random() * 3 + 's';
+                    starsContainer.appendChild(star);
+                }
+            }
+        }
+
+        // Generate energy particles
+        function generateEnergyParticles() {
+            const energyField = document.getElementById('energyField');
+            if (energyField) {
+                for (let i = 0; i < 30; i++) {
+                    const particle = document.createElement('div');
+                    particle.className = 'energy-particle';
+                    particle.style.left = Math.random() * 100 + '%';
+                    particle.style.animationDelay = Math.random() * 20 + 's';
+                    particle.style.animationDuration = (15 + Math.random() * 10) + 's';
+                    energyField.appendChild(particle);
+                }
+            }
+        }
+
+        // Generate consciousness web nodes
+        function generateConsciousnessWeb() {
+            const web = document.getElementById('consciousnessWeb');
+            if (web) {
+                const nodes = 12;
+                const centerX = 300;
+                const centerY = 300;
+                const radius = 250;
+                
+                for (let i = 0; i < nodes; i++) {
+                    const angle = (i / nodes) * Math.PI * 2;
+                    const x = centerX + Math.cos(angle) * radius * (0.5 + Math.random() * 0.5);
+                    const y = centerY + Math.sin(angle) * radius * (0.5 + Math.random() * 0.5);
+                    
+                    const node = document.createElement('div');
+                    node.className = 'consciousness-node';
+                    node.style.left = x + 'px';
+                    node.style.top = y + 'px';
+                    node.style.animationDelay = (i * 0.2) + 's';
+                    web.appendChild(node);
+                }
+            }
+        }
+
+        // Smooth scroll for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Initialize visualizations
+        generateStars();
+        generateEnergyParticles();
+        generateConsciousnessWeb();
+
+        // Parallax scrolling effect
+        let ticking = false;
+        function updateParallax() {
+            const scrolled = window.pageYOffset;
+            const parallaxElements = document.querySelectorAll('.parallax-layer');
+            
+            parallaxElements.forEach(element => {
+                const speed = 0.5;
+                const yPos = -(scrolled * speed);
+                element.style.transform = `translateY(${yPos}px)`;
+            });
+            
+            ticking = false;
+        }
+
+        function requestTick() {
+            if (!ticking) {
+                window.requestAnimationFrame(updateParallax);
+                ticking = true;
+            }
+        }
+
+        window.addEventListener('scroll', requestTick);
+    </script>
+</body>
+</html>

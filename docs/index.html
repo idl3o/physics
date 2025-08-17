@@ -638,6 +638,12 @@
             to { opacity: 1; transform: translateY(0); }
         }
 
+        @keyframes shimmer {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
         /* Accessibility */
         .sr-only {
             position: absolute;
@@ -682,6 +688,7 @@
             </div>
 
             <nav class="header-actions">
+                <a href="dimensional-journey.html" class="header-link" style="background: linear-gradient(135deg, #000, #fff); color: white; padding: 0.5rem 1rem; border-radius: 0.5rem; font-weight: 600; animation: shimmer 3s ease-in-out infinite;">∞ Dimensional Journey</a>
                 <a href="navigation.html" class="header-link" style="background: var(--color-secondary); color: white; padding: 0.5rem 1rem; border-radius: 0.5rem; font-weight: 600;">🧭 Complete Navigation</a>
                 <a href="reality_protocol/community/contributing.html" class="header-link">Contribute</a>
                 <a href="reality_protocol/community/" class="header-link">Community</a>
@@ -735,6 +742,17 @@
                                 <span class="infobox-value"><a href="https://reality-protocol.org">reality-protocol.org</a></span>
                             </div>
                         </div>
+                    </div>
+
+                    <!-- Featured: Dimensional Journey -->
+                    <div class="table-of-contents" style="background: linear-gradient(135deg, #000, #333, #666, #999, #fff); color: white; border: none; margin-bottom: 2rem;">
+                        <div class="toc-title" style="color: white; font-size: 1.5rem;">✨ NEW: Interactive Dimensional Journey</div>
+                        <a href="dimensional-journey.html" style="display: block; background: rgba(255,255,255,0.1); color: white; padding: 2rem; border-radius: 0.5rem; text-decoration: none; text-align: center; transition: all 0.3s ease; backdrop-filter: blur(10px);" onmouseover="this.style.background='rgba(255,255,255,0.2)'" onmouseout="this.style.background='rgba(255,255,255,0.1)'">
+                            <div style="font-size: 3rem; margin-bottom: 1rem;">∞</div>
+                            <div style="font-weight: 600; font-size: 1.2rem; margin-bottom: 0.5rem;">Experience the Complete 0↔N Framework</div>
+                            <div style="font-size: 0.9rem; opacity: 0.9; line-height: 1.6;">Journey through infinite dimensions with our revolutionary infinite-scroll interface. Explore the emanation from unity (0D) through physical reality (1-3D), temporal dimensions (4-6D), energy spaces (7-9D), consciousness (10D), and beyond to infinite dimensions.</div>
+                            <div style="margin-top: 1rem; padding: 0.5rem 1.5rem; background: rgba(255,255,255,0.2); display: inline-block; border-radius: 20px;">Begin Your Journey →</div>
+                        </a>
                     </div>
 
                     <!-- Quick Access -->
